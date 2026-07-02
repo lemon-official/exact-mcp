@@ -44,6 +44,16 @@ class Settings(BaseSettings):
     request_timeout_seconds: float = Field(default=30.0, gt=0, le=120)
     refresh_skew_seconds: int = Field(default=60, ge=0, le=300)
 
+    log_level: Literal["DEBUG", "INFO", "WARNING", "ERROR"] = "INFO"
+    log_file: Path | None = None
+    log_max_bytes: int = Field(default=10 * 1024 * 1024, ge=1024)
+    log_backup_count: int = Field(default=5, ge=0, le=100)
+
+    @field_validator("log_level", mode="before")
+    @classmethod
+    def normalize_log_level(cls, value: object) -> object:
+        return value.upper() if isinstance(value, str) else value
+
     @field_validator("exact_api_base", "exact_authorize_url", "exact_token_url")
     @classmethod
     def exact_urls_are_https(cls, value: AnyHttpUrl) -> AnyHttpUrl:

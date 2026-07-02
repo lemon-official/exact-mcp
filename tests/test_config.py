@@ -1,3 +1,5 @@
+from pathlib import Path
+
 import pytest
 from cryptography.fernet import Fernet
 from pydantic import ValidationError
@@ -27,6 +29,23 @@ def test_settings_have_safe_exact_and_transport_defaults() -> None:
     assert settings.rate_minutely_limit == 60
     assert settings.rate_daily_limit == 5000
     assert settings.rate_reserve == 5
+    assert settings.log_level == "INFO"
+    assert settings.log_file is None
+    assert settings.log_max_bytes == 10 * 1024 * 1024
+    assert settings.log_backup_count == 5
+
+
+def test_settings_parse_logging_environment(
+    monkeypatch: pytest.MonkeyPatch, tmp_path: Path
+) -> None:
+    monkeypatch.setenv("EXACT_MCP_LOG_LEVEL", "debug")
+    monkeypatch.setenv("EXACT_MCP_LOG_FILE", str(tmp_path) + "/exact.log")
+
+    settings = valid_settings()
+
+    assert settings.log_level == "DEBUG"
+    assert settings.log_file is not None
+    assert settings.log_file.name == "exact.log"
 
 
 def test_settings_reject_non_https_exact_endpoint() -> None:
