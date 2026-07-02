@@ -70,4 +70,3 @@ class ExactAPIError(ExactMCPError):
         if request_id:
             details["request_id"] = request_id
         super().__init__(message, retryable=retryable, details=details)
-

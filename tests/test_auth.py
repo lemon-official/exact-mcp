@@ -144,4 +144,3 @@ async def test_token_endpoint_error_does_not_expose_response_or_secret() -> None
 
     assert "client-secret" not in str(captured.value)
     assert "refresh-secret" not in str(captured.value)
-

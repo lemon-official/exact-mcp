@@ -40,4 +40,3 @@ def test_query_params_reject_unknown_fields_and_unbounded_top() -> None:
         query_params(select=("Secret",), allowed_fields={"ID"}, top=1)
     with pytest.raises(ValueError, match="between 1 and 60"):
         query_params(select=("ID",), allowed_fields={"ID"}, top=61)
-

@@ -130,4 +130,3 @@ class Receivable(StrictModel):
     currency: str | None = None
     original_amount: Decimal
     outstanding_amount: Decimal
-

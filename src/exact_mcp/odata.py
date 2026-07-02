@@ -79,4 +79,3 @@ def query_params(
     if order_by:
         params["$orderby"] = order_by
     return params
-

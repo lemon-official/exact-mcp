@@ -73,4 +73,3 @@ class Settings(BaseSettings):
         if self.rate_reserve >= self.rate_minutely_limit:
             raise ValueError("rate reserve must be below the minutely limit")
         return self
-

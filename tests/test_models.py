@@ -52,4 +52,3 @@ def test_goods_delivery_requires_explicit_confirmation() -> None:
     assert request.confirm is False
     with pytest.raises(ValidationError, match="exactly one"):
         GoodsDeliveryRequest(order_id=uuid4(), order_number="10001", confirm=True)
-

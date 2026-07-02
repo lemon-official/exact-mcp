@@ -42,4 +42,3 @@ def test_settings_reject_reserve_at_or_above_minutely_limit() -> None:
 def test_settings_validate_fernet_key() -> None:
     with pytest.raises(ValidationError, match="Fernet"):
         valid_settings(token_encryption_key="not-a-key")
-
