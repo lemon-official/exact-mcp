@@ -50,6 +50,8 @@ async def test_server_advertises_endpoint_gateway_with_safety_annotations() -> N
         "exact_endpoint_action",
     } <= tools.keys()
     assert tools["exact_endpoints_list"].annotations.readOnlyHint is True
+    assert "service" in tools["exact_endpoints_list"].inputSchema["properties"]
+    assert "service_name" not in tools["exact_endpoints_list"].inputSchema["properties"]
     assert tools["exact_endpoint_read"].annotations.readOnlyHint is True
     assert tools["exact_endpoint_create"].annotations.readOnlyHint is False
     assert tools["exact_endpoint_delete"].annotations.destructiveHint is True

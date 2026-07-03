@@ -53,9 +53,18 @@ def key_predicate(
     for field in key:
         if not _IDENTIFIER.fullmatch(field):
             raise ValueError("invalid entity key field")
+
+    def key_literal(value: str | bool | int | Decimal | UUID | date | datetime | None) -> str:
+        if isinstance(value, str):
+            try:
+                value = UUID(value)
+            except ValueError:
+                pass
+        return literal(value)
+
     if len(key) == 1:
-        return f"({literal(next(iter(key.values())))})"
-    return "(" + ",".join(f"{field}={literal(value)}" for field, value in key.items()) + ")"
+        return f"({key_literal(next(iter(key.values())))})"
+    return "(" + ",".join(f"{field}={key_literal(value)}" for field, value in key.items()) + ")"
 
 
 def startswith(field: str, value: str) -> str:

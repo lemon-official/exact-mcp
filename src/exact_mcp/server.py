@@ -100,6 +100,7 @@ def create_server(
     close_on_exit: bool = False,
 ) -> FastMCP:
     """Create an MCP server around an injected Exact service."""
+    endpoint_service = service
 
     @asynccontextmanager
     async def lifespan(server: FastMCP) -> AsyncIterator[ExactService]:
@@ -313,7 +314,7 @@ def create_server(
 
     @server.tool(annotations=read_only)
     async def exact_endpoints_list(
-        service_name: str | None = None,
+        service: str | None = None,
         method: str | None = None,
         query: str = "",
         limit: int = 50,
@@ -323,8 +324,8 @@ def create_server(
         """Discover registered Exact endpoint IDs before using the generic gateway."""
 
         async def call() -> dict[str, Any]:
-            return service.endpoints_list(
-                service=service_name,
+            return endpoint_service.endpoints_list(
+                service=service,
                 method=method,
                 query=query,
                 limit=limit,
@@ -336,7 +337,7 @@ def create_server(
             "exact_endpoints_list",
             call,
             arguments={
-                "service": service_name,
+                "service": service,
                 "method": method,
                 "query": query,
                 "limit": limit,

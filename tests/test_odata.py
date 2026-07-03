@@ -64,4 +64,7 @@ def test_key_predicate_formats_single_and_composite_keys() -> None:
     identifier = UUID("11111111-1111-1111-1111-111111111111")
 
     assert key_predicate({"ID": identifier}) == "(guid'11111111-1111-1111-1111-111111111111')"
+    assert key_predicate({"ID": str(identifier)}) == (
+        "(guid'11111111-1111-1111-1111-111111111111')"
+    )
     assert key_predicate({"Code": "A", "Line": 2}) == "(Code='A',Line=2)"
