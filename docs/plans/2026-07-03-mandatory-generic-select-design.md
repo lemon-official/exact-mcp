@@ -10,7 +10,7 @@ The curated MCP workflows already construct bounded `$select` parameters. The ge
 
 ## Contract
 
-`EndpointReadRequest.select` becomes a required list containing between 1 and 100 field names. This keeps the existing upper bound while allowing large resources such as bulk TransactionLines, whose required selection contains 86 fields.
+`EndpointReadRequest.select` becomes a required list containing between 1 and 100 field names. This keeps the existing upper bound while allowing large resources such as bulk TransactionLines, whose supplied selection contains 74 fields.
 
 Each field continues through the existing simple-identifier validation. Callers cannot supply raw OData fragments, commas, expressions, or unregistered query options through the field list.
 
