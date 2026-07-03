@@ -18,7 +18,15 @@ from exact_mcp.client import ExactClient
 from exact_mcp.config import Settings
 from exact_mcp.errors import ExactMCPError
 from exact_mcp.logging import redact
-from exact_mcp.models import DraftSalesOrderRequest, GoodsDeliveryRequest
+from exact_mcp.models import (
+    DraftSalesOrderRequest,
+    EndpointActionRequest,
+    EndpointCreateRequest,
+    EndpointDeleteRequest,
+    EndpointReadRequest,
+    EndpointUpdateRequest,
+    GoodsDeliveryRequest,
+)
 from exact_mcp.rate_limit import RateLimiter
 from exact_mcp.service import ExactService
 from exact_mcp.tokens import EncryptedFileTokenStore
@@ -301,6 +309,90 @@ def create_server(
             "sales_order_lines_search",
             lambda: service.sales_order_lines_search(order_id),
             arguments={"order_id": order_id, "context": context},
+        )
+
+    @server.tool(annotations=read_only)
+    async def exact_endpoints_list(
+        service_name: str | None = None,
+        method: str | None = None,
+        query: str = "",
+        limit: int = 50,
+        offset: int = 0,
+        context: str = "",
+    ) -> dict[str, Any]:
+        """Discover registered Exact endpoint IDs before using the generic gateway."""
+
+        async def call() -> dict[str, Any]:
+            return service.endpoints_list(
+                service=service_name,
+                method=method,
+                query=query,
+                limit=limit,
+                offset=offset,
+            )
+
+        return await _operation_call(
+            "tool",
+            "exact_endpoints_list",
+            call,
+            arguments={
+                "service": service_name,
+                "method": method,
+                "query": query,
+                "limit": limit,
+                "offset": offset,
+                "context": context,
+            },
+        )
+
+    @server.tool(annotations=read_only)
+    async def exact_endpoint_read(request: EndpointReadRequest) -> dict[str, Any]:
+        """Read one registered Exact resource using structured OData inputs."""
+        return await _operation_call(
+            "tool",
+            "exact_endpoint_read",
+            lambda: service.endpoint_read(request),
+            arguments={"request": request},
+        )
+
+    @server.tool(annotations=mutating)
+    async def exact_endpoint_create(request: EndpointCreateRequest) -> dict[str, Any]:
+        """Create a record on a registered Exact resource; confirm=true is required."""
+        return await _operation_call(
+            "tool",
+            "exact_endpoint_create",
+            lambda: service.endpoint_create(request),
+            arguments={"request": request},
+        )
+
+    @server.tool(annotations=mutating)
+    async def exact_endpoint_update(request: EndpointUpdateRequest) -> dict[str, Any]:
+        """Update a keyed record on a registered Exact resource; confirmation is required."""
+        return await _operation_call(
+            "tool",
+            "exact_endpoint_update",
+            lambda: service.endpoint_update(request),
+            arguments={"request": request},
+        )
+
+    @server.tool(annotations=destructive)
+    async def exact_endpoint_delete(request: EndpointDeleteRequest) -> dict[str, Any]:
+        """Delete a keyed Exact record; confirm=true is required."""
+        return await _operation_call(
+            "tool",
+            "exact_endpoint_delete",
+            lambda: service.endpoint_delete(request),
+            arguments={"request": request},
+        )
+
+    @server.tool(annotations=destructive)
+    async def exact_endpoint_action(request: EndpointActionRequest) -> dict[str, Any]:
+        """Execute a registered POST-only Exact action; confirm=true is required."""
+        return await _operation_call(
+            "tool",
+            "exact_endpoint_action",
+            lambda: service.endpoint_action(request),
+            arguments={"request": request},
         )
 
     @server.resource("exact://health")

@@ -15,6 +15,9 @@ class StubService:
     async def administration_current(self) -> dict[str, Any]:
         return {"division": 123}
 
+    def endpoints_list(self, **kwargs: Any) -> dict[str, Any]:
+        return {"items": [{"id": "crm/addresses"}], **kwargs}
+
 
 @pytest.mark.asyncio
 async def test_server_advertises_prd_tools_with_safety_annotations() -> None:
@@ -30,6 +33,27 @@ async def test_server_advertises_prd_tools_with_safety_annotations() -> None:
     } <= tools.keys()
     assert tools["resolve_customer_id"].annotations.readOnlyHint is True
     assert tools["execute_goods_delivery"].annotations.destructiveHint is True
+
+
+@pytest.mark.asyncio
+async def test_server_advertises_endpoint_gateway_with_safety_annotations() -> None:
+    server = create_server(StubService())  # type: ignore[arg-type]
+
+    tools = {tool.name: tool for tool in await server.list_tools()}
+
+    assert {
+        "exact_endpoints_list",
+        "exact_endpoint_read",
+        "exact_endpoint_create",
+        "exact_endpoint_update",
+        "exact_endpoint_delete",
+        "exact_endpoint_action",
+    } <= tools.keys()
+    assert tools["exact_endpoints_list"].annotations.readOnlyHint is True
+    assert tools["exact_endpoint_read"].annotations.readOnlyHint is True
+    assert tools["exact_endpoint_create"].annotations.readOnlyHint is False
+    assert tools["exact_endpoint_delete"].annotations.destructiveHint is True
+    assert tools["exact_endpoint_action"].annotations.destructiveHint is True
 
 
 @pytest.mark.asyncio
