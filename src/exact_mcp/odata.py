@@ -1,9 +1,12 @@
 """Small safe builders for server-owned OData v3 expressions."""
 
+import re
 from collections.abc import Iterable
 from datetime import date, datetime
 from decimal import Decimal
 from uuid import UUID
+
+_IDENTIFIER = re.compile(r"^[A-Za-z_][A-Za-z0-9_]*$")
 
 
 def quote(value: str) -> str:
@@ -28,6 +31,31 @@ def literal(value: str | bool | int | Decimal | UUID | date | datetime | None) -
 
 def eq(field: str, value: str | bool | int | Decimal | UUID | date | datetime | None) -> str:
     return f"{field} eq {literal(value)}"
+
+
+def comparison(
+    field: str,
+    operator: str,
+    value: str | bool | int | Decimal | UUID | date | datetime | None,
+) -> str:
+    if not _IDENTIFIER.fullmatch(field):
+        raise ValueError("invalid OData field")
+    if operator not in {"eq", "ne", "gt", "ge", "lt", "le"}:
+        raise ValueError("invalid OData comparison operator")
+    return f"{field} {operator} {literal(value)}"
+
+
+def key_predicate(
+    key: dict[str, str | bool | int | Decimal | UUID | date | datetime | None],
+) -> str:
+    if not key:
+        raise ValueError("an entity key is required")
+    for field in key:
+        if not _IDENTIFIER.fullmatch(field):
+            raise ValueError("invalid entity key field")
+    if len(key) == 1:
+        return f"({literal(next(iter(key.values())))})"
+    return "(" + ",".join(f"{field}={literal(value)}" for field, value in key.items()) + ")"
 
 
 def startswith(field: str, value: str) -> str:

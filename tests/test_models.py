@@ -6,6 +6,11 @@ from pydantic import ValidationError
 
 from exact_mcp.models import (
     DraftSalesOrderRequest,
+    EndpointActionRequest,
+    EndpointDeleteRequest,
+    EndpointFilter,
+    EndpointReadRequest,
+    EndpointUpdateRequest,
     GoodsDeliveryRequest,
     SalesOrderLineInput,
     SearchRequest,
@@ -52,3 +57,30 @@ def test_goods_delivery_requires_explicit_confirmation() -> None:
     assert request.confirm is False
     with pytest.raises(ValidationError, match="exactly one"):
         GoodsDeliveryRequest(order_id=uuid4(), order_number="10001", confirm=True)
+
+
+def test_endpoint_read_request_is_structured_and_bounded() -> None:
+    request = EndpointReadRequest(
+        endpoint="crm/addresses",
+        select=["ID", "City"],
+        filters=[EndpointFilter(field="City", operator="eq", value="Amsterdam")],
+        order_by=["City"],
+        limit=60,
+    )
+
+    assert request.filters[0].operator == "eq"
+    with pytest.raises(ValidationError):
+        EndpointReadRequest(endpoint="https://attacker.example", limit=61)
+
+
+def test_endpoint_keyed_mutations_require_keys() -> None:
+    with pytest.raises(ValidationError):
+        EndpointUpdateRequest(endpoint="crm/addresses", key={}, payload={})
+    with pytest.raises(ValidationError):
+        EndpointDeleteRequest(endpoint="crm/addresses", key={})
+
+
+def test_endpoint_action_defaults_to_unconfirmed() -> None:
+    request = EndpointActionRequest(endpoint="crm/acceptquotation", payload={"ID": "1"})
+
+    assert request.confirm is False
