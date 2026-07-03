@@ -65,15 +65,18 @@ Replace `start.example` with the regional Exact Online host used by your account
 
 ## Authorize the server
 
-Generate an Exact authorization URL:
+Run the interactive authorization flow:
+
+```bash
+exact-mcp auth
+```
+
+Open the printed URL, sign in to Exact Online, and approve access. Exact redirects to the configured callback URI. Copy the complete callback URL and paste it into the hidden prompt. The command extracts and decodes the authorization code, exchanges it, and encrypts the resulting access and refresh tokens.
+
+For a non-interactive or scripted workflow, generate the URL and exchange the code separately:
 
 ```bash
 exact-mcp auth-url
-```
-
-Open the printed URL, sign in to Exact Online, and approve access. Exact redirects to the configured callback URI with a `code` query parameter. Copy that code and exchange it:
-
-```bash
 exact-mcp exchange-code 'CODE_FROM_REDIRECT'
 ```
 
@@ -82,6 +85,14 @@ Confirm that encrypted credentials are available:
 ```bash
 exact-mcp auth-status
 ```
+
+The status reports how many minutes and seconds remain before access-token expiry, or how long ago it expired. To manually refresh a token that is near expiry, run:
+
+```bash
+exact-mcp auth-refresh
+```
+
+Exact does not permit refresh during the first 570 seconds after token issuance. `auth-refresh` reports the token age and required wait during that period, and otherwise skips refresh until the access token is near expiry. Refresh tokens remain valid for up to 30 days; after that, run `exact-mcp auth` again.
 
 The resulting access and refresh tokens are encrypted in `EXACT_MCP_TOKEN_FILE`. Do not commit `.env`, the encryption key, or the token file.
 
@@ -212,7 +223,7 @@ The default test suite uses mocked HTTP transports and never calls Exact Online.
 ## Troubleshooting
 
 `authentication_required`
-: Run `exact-mcp auth-url`, complete authorization, then run `exact-mcp exchange-code` again.
+: Run `exact-mcp auth` and paste the complete callback URL when prompted.
 
 `403 Forbidden`
 : Confirm that the authenticated Exact user can access the selected administration and that the OAuth application has the required permissions.

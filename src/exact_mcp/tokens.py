@@ -17,6 +17,7 @@ class OAuthTokens(BaseModel):
     refresh_token: str = Field(min_length=1)
     expires_at: float
     obtained_at: float
+    refresh_token_obtained_at: float | None = None
     token_type: str = "Bearer"
 
 

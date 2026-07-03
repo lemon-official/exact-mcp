@@ -445,6 +445,7 @@ def build_server(settings: Settings) -> FastMCP:
         max_pages=settings.max_pages,
         max_records=settings.max_records,
     )
+    client.set_division(4487358)
     return create_server(
         ExactService(client),
         settings=settings,
