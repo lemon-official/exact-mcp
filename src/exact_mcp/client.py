@@ -4,10 +4,11 @@ import logging
 import time
 from collections.abc import Mapping
 from typing import Any, Protocol
-from urllib.parse import urlsplit
+from urllib.parse import urlsplit, urlunsplit
 
 import httpx
 
+from exact_mcp.endpoints import EndpointSpec
 from exact_mcp.errors import ExactAPIError, ValidationFailedError
 from exact_mcp.logging import redact
 from exact_mcp.rate_limit import RateLimiter
@@ -269,6 +270,33 @@ class ExactClient:
                 return payload["d"]
             return payload
         raise ExactAPIError("Exact API retry budget exhausted", retryable=True)
+
+    async def request_endpoint(
+        self,
+        method: str,
+        endpoint: EndpointSpec,
+        *,
+        key_suffix: str = "",
+        params: Mapping[str, str] | None = None,
+        json: Mapping[str, Any] | None = None,
+    ) -> Any:
+        """Call a pre-validated registry endpoint without accepting a caller URL."""
+        if method not in endpoint.methods:
+            raise ValidationFailedError(f"{method} is not supported for endpoint {endpoint.id}")
+        if self._division is None:
+            await self.current_user()
+        if self._division is None:
+            raise ValidationFailedError("no active Exact division is available")
+        if key_suffix and not (key_suffix.startswith("(") and key_suffix.endswith(")")):
+            raise ValidationFailedError("invalid endpoint key suffix")
+        rendered = endpoint.uri_template.replace("{division}", str(self._division)) + key_suffix
+        base = urlsplit(self._api_base)
+        marker = "/api/v1"
+        if not base.path.endswith(marker):
+            raise ValidationFailedError("Exact API base must end with /api/v1")
+        prefix = base.path[: -len(marker)]
+        url = urlunsplit((base.scheme, base.netloc, prefix + rendered, "", ""))
+        return await self.request(method, url, params=params, json=json)
 
     def _url(self, path: str, division: int | None) -> str:
         parsed = urlsplit(path)

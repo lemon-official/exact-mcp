@@ -5,6 +5,7 @@ import httpx
 import pytest
 
 from exact_mcp.client import ExactClient
+from exact_mcp.endpoints import EndpointSpec
 from exact_mcp.errors import ExactAPIError
 from exact_mcp.rate_limit import RateLimiter
 
@@ -59,6 +60,42 @@ async def test_division_scoped_request_injects_bearer() -> None:
 
     assert seen[0].url.path == "/api/v1/123/crm/Accounts"
     assert seen[0].headers["Authorization"] == "Bearer access-secret"
+
+
+@pytest.mark.asyncio
+async def test_registered_request_renders_normal_and_beta_templates() -> None:
+    seen: list[httpx.Request] = []
+
+    async def handler(request: httpx.Request) -> httpx.Response:
+        seen.append(request)
+        return httpx.Response(200, json={"d": {"results": []}})
+
+    client = ExactClient(
+        "https://start.exactonline.nl/api/v1",
+        Auth(),
+        http=httpx.AsyncClient(transport=httpx.MockTransport(handler)),
+    )
+    client.set_division(123)
+    normal = EndpointSpec(
+        id="crm/addresses",
+        service="CRM",
+        resource="Addresses",
+        uri_template="/api/v1/{division}/crm/Addresses",
+        methods=("GET",),
+    )
+    beta = EndpointSpec(
+        id="budget/budgetscenarios",
+        service="Budget",
+        resource="BudgetScenarios",
+        uri_template="/api/v1/beta/{division}/budget/BudgetScenarios",
+        methods=("GET",),
+    )
+
+    await client.request_endpoint("GET", normal, key_suffix="(guid'abc')")
+    await client.request_endpoint("GET", beta)
+
+    assert seen[0].url.path == "/api/v1/123/crm/Addresses(guid'abc')"
+    assert seen[1].url.path == "/api/v1/beta/123/budget/BudgetScenarios"
 
 
 @pytest.mark.asyncio

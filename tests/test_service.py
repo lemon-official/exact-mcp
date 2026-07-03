@@ -6,6 +6,12 @@ import pytest
 from exact_mcp.errors import AmbiguousMatchError, ValidationFailedError
 from exact_mcp.models import (
     DraftSalesOrderRequest,
+    EndpointActionRequest,
+    EndpointCreateRequest,
+    EndpointDeleteRequest,
+    EndpointFilter,
+    EndpointReadRequest,
+    EndpointUpdateRequest,
     GoodsDeliveryRequest,
     SalesOrderLineInput,
 )
@@ -44,6 +50,24 @@ class FakeClient:
     ) -> Any:
         self.calls.append((method, path, {"params": params or {}, "json": json or {}}))
         return {"ID": str(uuid4()), "OrderNumber": 1001}
+
+    async def request_endpoint(
+        self,
+        method: str,
+        endpoint: Any,
+        *,
+        key_suffix: str = "",
+        params: dict[str, str] | None = None,
+        json: dict[str, Any] | None = None,
+    ) -> Any:
+        self.calls.append(
+            (
+                method,
+                endpoint.id + key_suffix,
+                {"params": params or {}, "json": json or {}},
+            )
+        )
+        return {"results": [{"ID": "1"}]}
 
 
 @pytest.mark.asyncio
@@ -162,3 +186,59 @@ async def test_delivery_resolves_open_lines_and_posts_once() -> None:
     assert payload["GoodsDeliveryLines"] == [
         {"SalesOrderLine": str(line_id), "Item": str(item_id), "Quantity": 3.0}
     ]
+
+
+@pytest.mark.asyncio
+async def test_generic_endpoint_discovery_and_structured_read() -> None:
+    client = FakeClient()
+    service = ExactService(client)  # type: ignore[arg-type]
+
+    discovery = service.endpoints_list(service="CRM", method="GET", query="addresses")
+    result = await service.endpoint_read(
+        EndpointReadRequest(
+            endpoint="crm/addresses",
+            select=["ID", "City"],
+            filters=[EndpointFilter(field="City", operator="eq", value="Amsterdam")],
+            order_by=["City"],
+        )
+    )
+
+    assert discovery["items"][0]["id"] == "crm/addresses"
+    assert result == {"endpoint": "crm/addresses", "data": {"results": [{"ID": "1"}]}}
+    call = client.calls[-1]
+    assert call[2]["params"]["$select"] == "ID,City"
+    assert call[2]["params"]["$filter"] == "City eq 'Amsterdam'"
+
+
+@pytest.mark.asyncio
+async def test_generic_mutations_require_confirmation_and_dispatch_methods() -> None:
+    client = FakeClient()
+    service = ExactService(client)  # type: ignore[arg-type]
+
+    with pytest.raises(ValidationFailedError, match="confirm"):
+        await service.endpoint_create(
+            EndpointCreateRequest(endpoint="crm/addresses", payload={"City": "Amsterdam"})
+        )
+    assert client.calls == []
+
+    await service.endpoint_create(
+        EndpointCreateRequest(endpoint="crm/addresses", payload={"City": "Amsterdam"}, confirm=True)
+    )
+    await service.endpoint_update(
+        EndpointUpdateRequest(
+            endpoint="crm/addresses",
+            key={"ID": "address-id"},
+            payload={"City": "Utrecht"},
+            confirm=True,
+        )
+    )
+    await service.endpoint_delete(
+        EndpointDeleteRequest(endpoint="crm/addresses", key={"ID": "address-id"}, confirm=True)
+    )
+    await service.endpoint_action(
+        EndpointActionRequest(
+            endpoint="crm/acceptquotation", payload={"QuotationID": "quote-id"}, confirm=True
+        )
+    )
+
+    assert [call[0] for call in client.calls] == ["POST", "PUT", "DELETE", "POST"]

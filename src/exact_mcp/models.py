@@ -2,7 +2,7 @@
 
 from datetime import date
 from decimal import Decimal
-from typing import Any, Self
+from typing import Any, Literal, Self
 from uuid import UUID
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
@@ -90,6 +90,48 @@ class GoodsDeliveryRequest(StrictModel):
         if (self.order_id is None) == (self.order_number is None):
             raise ValueError("provide exactly one of order_id or order_number")
         return self
+
+
+class EndpointFilter(StrictModel):
+    field: str = Field(pattern=r"^[A-Za-z_][A-Za-z0-9_]*$")
+    operator: Literal["eq", "ne", "gt", "ge", "lt", "le", "startswith", "contains"]
+    value: Any
+
+
+class EndpointReadRequest(StrictModel):
+    endpoint: str = Field(pattern=r"^[a-z0-9_/]+$")
+    key: dict[str, Any] | None = None
+    select: list[str] = Field(default_factory=list, max_length=100)
+    filters: list[EndpointFilter] = Field(default_factory=list, max_length=20)
+    order_by: list[str] = Field(default_factory=list, max_length=10)
+    parameters: dict[str, Any] = Field(default_factory=dict)
+    limit: int = Field(default=20, ge=1, le=60)
+    offset: int = Field(default=0, ge=0)
+    context: str = Field(default="", max_length=500)
+
+
+class EndpointCreateRequest(StrictModel):
+    endpoint: str = Field(pattern=r"^[a-z0-9_/]+$")
+    payload: dict[str, Any]
+    parameters: dict[str, Any] = Field(default_factory=dict)
+    confirm: bool = False
+    context: str = Field(default="", max_length=500)
+
+
+class EndpointUpdateRequest(EndpointCreateRequest):
+    key: dict[str, Any] = Field(min_length=1)
+
+
+class EndpointDeleteRequest(StrictModel):
+    endpoint: str = Field(pattern=r"^[a-z0-9_/]+$")
+    key: dict[str, Any] = Field(min_length=1)
+    parameters: dict[str, Any] = Field(default_factory=dict)
+    confirm: bool = False
+    context: str = Field(default="", max_length=500)
+
+
+class EndpointActionRequest(EndpointCreateRequest):
+    pass
 
 
 class Page(StrictModel):

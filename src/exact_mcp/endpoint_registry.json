@@ -1,0 +1,5261 @@
+[
+  {
+    "id": "accountancy/accountinvolvedaccounts",
+    "service": "Accountancy",
+    "resource": "AccountInvolvedAccounts",
+    "uri_template": "/api/v1/{division}/accountancy/AccountInvolvedAccounts",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "accountancy/accountowners",
+    "service": "Accountancy",
+    "resource": "AccountOwners",
+    "uri_template": "/api/v1/{division}/accountancy/AccountOwners",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "accountancy/clientgroups",
+    "service": "Accountancy",
+    "resource": "ClientGroups",
+    "uri_template": "/api/v1/{division}/accountancy/ClientGroups",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "accountancy/clientmaingroups",
+    "service": "Accountancy",
+    "resource": "ClientMainGroups",
+    "uri_template": "/api/v1/{division}/accountancy/ClientMainGroups",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "accountancy/involveduserroles",
+    "service": "Accountancy",
+    "resource": "InvolvedUserRoles",
+    "uri_template": "/api/v1/{division}/accountancy/InvolvedUserRoles",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "accountancy/involvedusers",
+    "service": "Accountancy",
+    "resource": "InvolvedUsers",
+    "uri_template": "/api/v1/{division}/accountancy/InvolvedUsers",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "accountancy/solutionlinks",
+    "service": "Accountancy",
+    "resource": "SolutionLinks",
+    "uri_template": "/api/v1/{division}/accountancy/SolutionLinks",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "accountancy/tasktypes",
+    "service": "Accountancy",
+    "resource": "TaskTypes",
+    "uri_template": "/api/v1/{division}/accountancy/TaskTypes",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "activities/annualstatements",
+    "service": "Activities",
+    "resource": "AnnualStatements",
+    "uri_template": "/api/v1/{division}/activities/AnnualStatements",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "activities/communicationnotes",
+    "service": "Activities",
+    "resource": "CommunicationNotes",
+    "uri_template": "/api/v1/{division}/activities/CommunicationNotes",
+    "methods": [
+      "GET",
+      "POST"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "activities/complaints",
+    "service": "Activities",
+    "resource": "Complaints",
+    "uri_template": "/api/v1/{division}/activities/Complaints",
+    "methods": [
+      "GET",
+      "POST"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "activities/events",
+    "service": "Activities",
+    "resource": "Events",
+    "uri_template": "/api/v1/{division}/activities/Events",
+    "methods": [
+      "GET",
+      "POST"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "activities/fiscals",
+    "service": "Activities",
+    "resource": "Fiscals",
+    "uri_template": "/api/v1/{division}/activities/Fiscals",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "activities/servicerequests",
+    "service": "Activities",
+    "resource": "ServiceRequests",
+    "uri_template": "/api/v1/{division}/activities/ServiceRequests",
+    "methods": [
+      "GET",
+      "POST"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "activities/tasks",
+    "service": "Activities",
+    "resource": "Tasks",
+    "uri_template": "/api/v1/{division}/activities/Tasks",
+    "methods": [
+      "GET",
+      "POST"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "assets/assetgroups",
+    "service": "Assets",
+    "resource": "AssetGroups",
+    "uri_template": "/api/v1/{division}/assets/AssetGroups",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "assets/assets",
+    "service": "Assets",
+    "resource": "Assets",
+    "uri_template": "/api/v1/{division}/assets/Assets",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "assets/commercialbuildingvalues",
+    "service": "Assets",
+    "resource": "CommercialBuildingValues",
+    "uri_template": "/api/v1/{division}/assets/CommercialBuildingValues",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "assets/depreciationmethods",
+    "service": "Assets",
+    "resource": "DepreciationMethods",
+    "uri_template": "/api/v1/{division}/assets/DepreciationMethods",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "budget/budgets",
+    "service": "Budget",
+    "resource": "Budgets",
+    "uri_template": "/api/v1/{division}/budget/Budgets",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "budget/budgetscenarios",
+    "service": "Budget",
+    "resource": "BudgetScenarios",
+    "uri_template": "/api/v1/beta/{division}/budget/BudgetScenarios",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "bulk/cashflow/payments",
+    "service": "Bulk",
+    "resource": "Cashflow/Payments",
+    "uri_template": "/api/v1/{division}/bulk/Cashflow/Payments",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "bulk/cashflow/receivables",
+    "service": "Bulk",
+    "resource": "Cashflow/Receivables",
+    "uri_template": "/api/v1/{division}/bulk/Cashflow/Receivables",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "bulk/crm/accounts",
+    "service": "Bulk",
+    "resource": "CRM/Accounts",
+    "uri_template": "/api/v1/{division}/bulk/CRM/Accounts",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "bulk/crm/addresses",
+    "service": "Bulk",
+    "resource": "CRM/Addresses",
+    "uri_template": "/api/v1/{division}/bulk/CRM/Addresses",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "bulk/crm/contacts",
+    "service": "Bulk",
+    "resource": "CRM/Contacts",
+    "uri_template": "/api/v1/{division}/bulk/CRM/Contacts",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "bulk/crm/quotationlines",
+    "service": "Bulk",
+    "resource": "CRM/QuotationLines",
+    "uri_template": "/api/v1/{division}/bulk/CRM/QuotationLines",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "bulk/crm/quotations",
+    "service": "Bulk",
+    "resource": "CRM/Quotations",
+    "uri_template": "/api/v1/{division}/bulk/CRM/Quotations",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "bulk/documents/documentattachments",
+    "service": "Bulk",
+    "resource": "Documents/DocumentAttachments",
+    "uri_template": "/api/v1/{division}/bulk/Documents/DocumentAttachments",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "bulk/documents/documents",
+    "service": "Bulk",
+    "resource": "Documents/Documents",
+    "uri_template": "/api/v1/{division}/bulk/Documents/Documents",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "bulk/financial/glaccounts",
+    "service": "Bulk",
+    "resource": "Financial/GLAccounts",
+    "uri_template": "/api/v1/{division}/bulk/Financial/GLAccounts",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "bulk/financial/glclassifications",
+    "service": "Bulk",
+    "resource": "Financial/GLClassifications",
+    "uri_template": "/api/v1/{division}/bulk/Financial/GLClassifications",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "bulk/financial/transactionlines",
+    "service": "Bulk",
+    "resource": "Financial/TransactionLines",
+    "uri_template": "/api/v1/{division}/bulk/Financial/TransactionLines",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "bulk/logistics/items",
+    "service": "Bulk",
+    "resource": "Logistics/Items",
+    "uri_template": "/api/v1/{division}/bulk/Logistics/Items",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "bulk/logistics/salesitemprices",
+    "service": "Bulk",
+    "resource": "Logistics/SalesItemPrices",
+    "uri_template": "/api/v1/{division}/bulk/Logistics/SalesItemPrices",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "bulk/project/projectwbs",
+    "service": "Bulk",
+    "resource": "Project/ProjectWBS",
+    "uri_template": "/api/v1/{division}/bulk/Project/ProjectWBS",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "bulk/salesinvoice/salesinvoicelines",
+    "service": "Bulk",
+    "resource": "SalesInvoice/SalesInvoiceLines",
+    "uri_template": "/api/v1/{division}/bulk/SalesInvoice/SalesInvoiceLines",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "bulk/salesinvoice/salesinvoices",
+    "service": "Bulk",
+    "resource": "SalesInvoice/SalesInvoices",
+    "uri_template": "/api/v1/{division}/bulk/SalesInvoice/SalesInvoices",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "bulk/salesorder/goodsdeliveries",
+    "service": "Bulk",
+    "resource": "SalesOrder/GoodsDeliveries",
+    "uri_template": "/api/v1/{division}/bulk/SalesOrder/GoodsDeliveries",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "bulk/salesorder/goodsdeliverylines",
+    "service": "Bulk",
+    "resource": "SalesOrder/GoodsDeliveryLines",
+    "uri_template": "/api/v1/{division}/bulk/SalesOrder/GoodsDeliveryLines",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "bulk/salesorder/salesorderlines",
+    "service": "Bulk",
+    "resource": "SalesOrder/SalesOrderLines",
+    "uri_template": "/api/v1/{division}/bulk/SalesOrder/SalesOrderLines",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "bulk/salesorder/salesorders",
+    "service": "Bulk",
+    "resource": "SalesOrder/SalesOrders",
+    "uri_template": "/api/v1/{division}/bulk/SalesOrder/SalesOrders",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "cashflow/allocationrule",
+    "service": "Cashflow",
+    "resource": "AllocationRule",
+    "uri_template": "/api/v1/beta/{division}/cashflow/AllocationRule",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "cashflow/banks",
+    "service": "Cashflow",
+    "resource": "Banks",
+    "uri_template": "/api/v1/{division}/cashflow/Banks",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "cashflow/directdebitmandates",
+    "service": "Cashflow",
+    "resource": "DirectDebitMandates",
+    "uri_template": "/api/v1/{division}/cashflow/DirectDebitMandates",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "cashflow/paymentconditions",
+    "service": "Cashflow",
+    "resource": "PaymentConditions",
+    "uri_template": "/api/v1/{division}/cashflow/PaymentConditions",
+    "methods": [
+      "GET",
+      "POST"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "cashflow/payments",
+    "service": "Cashflow",
+    "resource": "Payments",
+    "uri_template": "/api/v1/{division}/cashflow/Payments",
+    "methods": [
+      "GET",
+      "PUT"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "cashflow/processpayments",
+    "service": "Cashflow",
+    "resource": "ProcessPayments",
+    "uri_template": "/api/v1/{division}/cashflow/ProcessPayments",
+    "methods": [
+      "POST"
+    ],
+    "post_only_action": true,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "cashflow/receivables",
+    "service": "Cashflow",
+    "resource": "Receivables",
+    "uri_template": "/api/v1/{division}/cashflow/Receivables",
+    "methods": [
+      "GET",
+      "PUT"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "crm/acceptquotation",
+    "service": "CRM",
+    "resource": "AcceptQuotation",
+    "uri_template": "/api/v1/{division}/crm/AcceptQuotation",
+    "methods": [
+      "POST"
+    ],
+    "post_only_action": true,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "crm/accountclasses",
+    "service": "CRM",
+    "resource": "AccountClasses",
+    "uri_template": "/api/v1/{division}/crm/AccountClasses",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "crm/accountclassificationnames",
+    "service": "CRM",
+    "resource": "AccountClassificationNames",
+    "uri_template": "/api/v1/{division}/crm/AccountClassificationNames",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "crm/accountclassifications",
+    "service": "CRM",
+    "resource": "AccountClassifications",
+    "uri_template": "/api/v1/{division}/crm/AccountClassifications",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "crm/addresses",
+    "service": "CRM",
+    "resource": "Addresses",
+    "uri_template": "/api/v1/{division}/crm/Addresses",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "crm/addressstates",
+    "service": "CRM",
+    "resource": "AddressStates",
+    "uri_template": "/api/v1/{division}/crm/AddressStates",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "crm/bankaccounts",
+    "service": "CRM",
+    "resource": "BankAccounts",
+    "uri_template": "/api/v1/{division}/crm/BankAccounts",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "crm/contacts",
+    "service": "CRM",
+    "resource": "Contacts",
+    "uri_template": "/api/v1/{division}/crm/Contacts",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "crm/emailwithsignoffquotation",
+    "service": "CRM",
+    "resource": "EmailWithSignOffQuotation",
+    "uri_template": "/api/v1/{division}/crm/EmailWithSignOffQuotation",
+    "methods": [
+      "POST"
+    ],
+    "post_only_action": true,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "crm/leadpurposes",
+    "service": "CRM",
+    "resource": "LeadPurposes",
+    "uri_template": "/api/v1/{division}/crm/LeadPurposes",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "crm/leadsources",
+    "service": "CRM",
+    "resource": "LeadSources",
+    "uri_template": "/api/v1/{division}/crm/LeadSources",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "crm/opportunities",
+    "service": "CRM",
+    "resource": "Opportunities",
+    "uri_template": "/api/v1/{division}/crm/Opportunities",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "crm/optionalquotationlineid",
+    "service": "CRM",
+    "resource": "OptionalQuotationLineID",
+    "uri_template": "/api/v1/{division}/crm/OptionalQuotationLineID",
+    "methods": [
+      "POST"
+    ],
+    "post_only_action": true,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "crm/printquotation",
+    "service": "CRM",
+    "resource": "PrintQuotation",
+    "uri_template": "/api/v1/{division}/crm/PrintQuotation",
+    "methods": [
+      "POST"
+    ],
+    "post_only_action": true,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "crm/quotationlines",
+    "service": "CRM",
+    "resource": "QuotationLines",
+    "uri_template": "/api/v1/{division}/crm/QuotationLines",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "crm/quotationorderchargelines",
+    "service": "CRM",
+    "resource": "QuotationOrderChargeLines",
+    "uri_template": "/api/v1/{division}/crm/QuotationOrderChargeLines",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "crm/quotations",
+    "service": "CRM",
+    "resource": "Quotations",
+    "uri_template": "/api/v1/{division}/crm/Quotations",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "crm/reasoncodes",
+    "service": "CRM",
+    "resource": "ReasonCodes",
+    "uri_template": "/api/v1/{division}/crm/ReasonCodes",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "crm/rejectquotation",
+    "service": "CRM",
+    "resource": "RejectQuotation",
+    "uri_template": "/api/v1/{division}/crm/RejectQuotation",
+    "methods": [
+      "POST"
+    ],
+    "post_only_action": true,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "crm/reopenquotation",
+    "service": "CRM",
+    "resource": "ReopenQuotation",
+    "uri_template": "/api/v1/{division}/crm/ReopenQuotation",
+    "methods": [
+      "POST"
+    ],
+    "post_only_action": true,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "crm/reviewquotation",
+    "service": "CRM",
+    "resource": "ReviewQuotation",
+    "uri_template": "/api/v1/{division}/crm/ReviewQuotation",
+    "methods": [
+      "POST"
+    ],
+    "post_only_action": true,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "customfield/customfields",
+    "service": "CustomField",
+    "resource": "CustomFields",
+    "uri_template": "/api/v1/{division}/customfield/CustomFields",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "customfield/updatecustomfield",
+    "service": "CustomField",
+    "resource": "UpdateCustomField",
+    "uri_template": "/api/v1/{division}/customfield/UpdateCustomField",
+    "methods": [
+      "POST"
+    ],
+    "post_only_action": true,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "documents/documentattachments",
+    "service": "Documents",
+    "resource": "DocumentAttachments",
+    "uri_template": "/api/v1/{division}/documents/DocumentAttachments",
+    "methods": [
+      "GET",
+      "POST",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "documents/documentcategories",
+    "service": "Documents",
+    "resource": "DocumentCategories",
+    "uri_template": "/api/v1/{division}/documents/DocumentCategories",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "documents/documentfolders",
+    "service": "Documents",
+    "resource": "DocumentFolders",
+    "uri_template": "/api/v1/{division}/documents/DocumentFolders",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "documents/documents",
+    "service": "Documents",
+    "resource": "Documents",
+    "uri_template": "/api/v1/{division}/documents/Documents",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "documents/documenttypecategories",
+    "service": "Documents",
+    "resource": "DocumentTypeCategories",
+    "uri_template": "/api/v1/{division}/documents/DocumentTypeCategories",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "documents/documenttypefolders",
+    "service": "Documents",
+    "resource": "DocumentTypeFolders",
+    "uri_template": "/api/v1/{division}/documents/DocumentTypeFolders",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "documents/documenttypes",
+    "service": "Documents",
+    "resource": "DocumentTypes",
+    "uri_template": "/api/v1/{division}/documents/DocumentTypes",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "documents/getsharepointdocumenturl",
+    "service": "Documents",
+    "resource": "GetSharePointDocumentUrl",
+    "uri_template": "/api/v1/{division}/documents/GetSharePointDocumentUrl",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "financial/deductibilitypercentages",
+    "service": "Financial",
+    "resource": "DeductibilityPercentages",
+    "uri_template": "/api/v1/{division}/financial/DeductibilityPercentages",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "financial/exchangerates",
+    "service": "Financial",
+    "resource": "ExchangeRates",
+    "uri_template": "/api/v1/{division}/financial/ExchangeRates",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "financial/financialperiods",
+    "service": "Financial",
+    "resource": "FinancialPeriods",
+    "uri_template": "/api/v1/{division}/financial/FinancialPeriods",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "financial/glaccountclassificationmappings",
+    "service": "Financial",
+    "resource": "GLAccountClassificationMappings",
+    "uri_template": "/api/v1/{division}/financial/GLAccountClassificationMappings",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "financial/glaccounts",
+    "service": "Financial",
+    "resource": "GLAccounts",
+    "uri_template": "/api/v1/{division}/financial/GLAccounts",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "financial/glclassifications",
+    "service": "Financial",
+    "resource": "GLClassifications",
+    "uri_template": "/api/v1/{division}/financial/GLClassifications",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "financial/glschemes",
+    "service": "Financial",
+    "resource": "GLSchemes",
+    "uri_template": "/api/v1/{division}/financial/GLSchemes",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "financial/gltransactionsources",
+    "service": "Financial",
+    "resource": "GLTransactionSources",
+    "uri_template": "/api/v1/{division}/financial/GLTransactionSources",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "financial/gltransactiontypes",
+    "service": "Financial",
+    "resource": "GLTransactionTypes",
+    "uri_template": "/api/v1/{division}/financial/GLTransactionTypes",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "financial/journals",
+    "service": "Financial",
+    "resource": "Journals",
+    "uri_template": "/api/v1/{division}/financial/Journals",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "financial/officialreturns",
+    "service": "Financial",
+    "resource": "OfficialReturns",
+    "uri_template": "/api/v1/{division}/financial/OfficialReturns",
+    "methods": [
+      "GET",
+      "POST"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "financial/processreturn",
+    "service": "Financial",
+    "resource": "ProcessReturn",
+    "uri_template": "/api/v1/{division}/financial/ProcessReturn",
+    "methods": [
+      "POST"
+    ],
+    "post_only_action": true,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "financial/reportingbalance",
+    "service": "Financial",
+    "resource": "ReportingBalance",
+    "uri_template": "/api/v1/{division}/financial/ReportingBalance",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "financialtransaction/bankentries",
+    "service": "FinancialTransaction",
+    "resource": "BankEntries",
+    "uri_template": "/api/v1/{division}/financialtransaction/BankEntries",
+    "methods": [
+      "GET",
+      "POST",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "financialtransaction/bankentrylines",
+    "service": "FinancialTransaction",
+    "resource": "BankEntryLines",
+    "uri_template": "/api/v1/{division}/financialtransaction/BankEntryLines",
+    "methods": [
+      "GET",
+      "POST"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "financialtransaction/cashentries",
+    "service": "FinancialTransaction",
+    "resource": "CashEntries",
+    "uri_template": "/api/v1/{division}/financialtransaction/CashEntries",
+    "methods": [
+      "GET",
+      "POST",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "financialtransaction/cashentrylines",
+    "service": "FinancialTransaction",
+    "resource": "CashEntryLines",
+    "uri_template": "/api/v1/{division}/financialtransaction/CashEntryLines",
+    "methods": [
+      "GET",
+      "POST"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "financialtransaction/transactionlines",
+    "service": "FinancialTransaction",
+    "resource": "TransactionLines",
+    "uri_template": "/api/v1/{division}/financialtransaction/TransactionLines",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "general/currencies",
+    "service": "General",
+    "resource": "Currencies",
+    "uri_template": "/api/v1/{division}/general/Currencies",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "general/layouts",
+    "service": "General",
+    "resource": "Layouts",
+    "uri_template": "/api/v1/{division}/general/Layouts",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "generaljournalentry/generaljournalentries",
+    "service": "GeneralJournalEntry",
+    "resource": "GeneralJournalEntries",
+    "uri_template": "/api/v1/{division}/generaljournalentry/GeneralJournalEntries",
+    "methods": [
+      "GET",
+      "POST",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "generaljournalentry/generaljournalentrylines",
+    "service": "GeneralJournalEntry",
+    "resource": "GeneralJournalEntryLines",
+    "uri_template": "/api/v1/{division}/generaljournalentry/GeneralJournalEntryLines",
+    "methods": [
+      "GET",
+      "POST"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "hrm/absenceregistrations",
+    "service": "HRM",
+    "resource": "AbsenceRegistrations",
+    "uri_template": "/api/v1/{division}/hrm/AbsenceRegistrations",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "hrm/absenceregistrationtransactions",
+    "service": "HRM",
+    "resource": "AbsenceRegistrationTransactions",
+    "uri_template": "/api/v1/{division}/hrm/AbsenceRegistrationTransactions",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "hrm/costcenters",
+    "service": "HRM",
+    "resource": "Costcenters",
+    "uri_template": "/api/v1/{division}/hrm/Costcenters",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "hrm/costunits",
+    "service": "HRM",
+    "resource": "Costunits",
+    "uri_template": "/api/v1/{division}/hrm/Costunits",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "hrm/departments",
+    "service": "HRM",
+    "resource": "Departments",
+    "uri_template": "/api/v1/{division}/hrm/Departments",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "hrm/divisionclasses",
+    "service": "HRM",
+    "resource": "DivisionClasses",
+    "uri_template": "/api/v1/{division}/hrm/DivisionClasses",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "hrm/divisionclassnames",
+    "service": "HRM",
+    "resource": "DivisionClassNames",
+    "uri_template": "/api/v1/{division}/hrm/DivisionClassNames",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "hrm/divisionclassvalues",
+    "service": "HRM",
+    "resource": "DivisionClassValues",
+    "uri_template": "/api/v1/{division}/hrm/DivisionClassValues",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "hrm/divisions",
+    "service": "HRM",
+    "resource": "Divisions",
+    "uri_template": "/api/v1/{division}/hrm/Divisions",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "hrm/jobgroups",
+    "service": "HRM",
+    "resource": "JobGroups",
+    "uri_template": "/api/v1/{division}/hrm/JobGroups",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "hrm/jobtitles",
+    "service": "HRM",
+    "resource": "JobTitles",
+    "uri_template": "/api/v1/{division}/hrm/JobTitles",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "hrm/leaveabsencehoursbyday",
+    "service": "HRM",
+    "resource": "LeaveAbsenceHoursByDay",
+    "uri_template": "/api/v1/{division}/hrm/LeaveAbsenceHoursByDay",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "hrm/leavebuildupregistrations",
+    "service": "HRM",
+    "resource": "LeaveBuildUpRegistrations",
+    "uri_template": "/api/v1/{division}/hrm/LeaveBuildUpRegistrations",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "hrm/leaveregistrations",
+    "service": "HRM",
+    "resource": "LeaveRegistrations",
+    "uri_template": "/api/v1/{division}/hrm/LeaveRegistrations",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "hrm/schedules",
+    "service": "HRM",
+    "resource": "Schedules",
+    "uri_template": "/api/v1/{division}/hrm/Schedules",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "inventory/assemblybillofmaterialheader",
+    "service": "Inventory",
+    "resource": "AssemblyBillOfMaterialHeader",
+    "uri_template": "/api/v1/{division}/inventory/AssemblyBillOfMaterialHeader",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "inventory/assemblybillofmaterialmaterials",
+    "service": "Inventory",
+    "resource": "AssemblyBillOfMaterialMaterials",
+    "uri_template": "/api/v1/{division}/inventory/AssemblyBillOfMaterialMaterials",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "inventory/assemblyorders",
+    "service": "Inventory",
+    "resource": "AssemblyOrders",
+    "uri_template": "/api/v1/{division}/inventory/AssemblyOrders",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "inventory/batchnumbers",
+    "service": "Inventory",
+    "resource": "BatchNumbers",
+    "uri_template": "/api/v1/{division}/inventory/BatchNumbers",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "inventory/finishassemblyorder",
+    "service": "Inventory",
+    "resource": "FinishAssemblyOrder",
+    "uri_template": "/api/v1/{division}/inventory/FinishAssemblyOrder",
+    "methods": [
+      "POST"
+    ],
+    "post_only_action": true,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "inventory/itemwarehouseplanningdetails",
+    "service": "Inventory",
+    "resource": "ItemWarehousePlanningDetails",
+    "uri_template": "/api/v1/{division}/inventory/ItemWarehousePlanningDetails",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "inventory/itemwarehouses",
+    "service": "Inventory",
+    "resource": "ItemWarehouses",
+    "uri_template": "/api/v1/{division}/inventory/ItemWarehouses",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "inventory/itemwarehousestoragelocations",
+    "service": "Inventory",
+    "resource": "ItemWarehouseStorageLocations",
+    "uri_template": "/api/v1/{division}/inventory/ItemWarehouseStorageLocations",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "inventory/processstockcount",
+    "service": "Inventory",
+    "resource": "ProcessStockCount",
+    "uri_template": "/api/v1/{division}/inventory/ProcessStockCount",
+    "methods": [
+      "POST"
+    ],
+    "post_only_action": true,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "inventory/processwarehousetransfer",
+    "service": "Inventory",
+    "resource": "ProcessWarehouseTransfer",
+    "uri_template": "/api/v1/{division}/inventory/ProcessWarehouseTransfer",
+    "methods": [
+      "POST"
+    ],
+    "post_only_action": true,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "inventory/serialnumbers",
+    "service": "Inventory",
+    "resource": "SerialNumbers",
+    "uri_template": "/api/v1/{division}/inventory/SerialNumbers",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "inventory/stockbatchnumbers",
+    "service": "Inventory",
+    "resource": "StockBatchNumbers",
+    "uri_template": "/api/v1/{division}/inventory/StockBatchNumbers",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "inventory/stockcountlines",
+    "service": "Inventory",
+    "resource": "StockCountLines",
+    "uri_template": "/api/v1/{division}/inventory/StockCountLines",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "inventory/stockcounts",
+    "service": "Inventory",
+    "resource": "StockCounts",
+    "uri_template": "/api/v1/{division}/inventory/StockCounts",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "inventory/stockserialnumbers",
+    "service": "Inventory",
+    "resource": "StockSerialNumbers",
+    "uri_template": "/api/v1/{division}/inventory/StockSerialNumbers",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "inventory/storagelocations",
+    "service": "Inventory",
+    "resource": "StorageLocations",
+    "uri_template": "/api/v1/{division}/inventory/StorageLocations",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "inventory/warehousetransferlines",
+    "service": "Inventory",
+    "resource": "WarehouseTransferLines",
+    "uri_template": "/api/v1/{division}/inventory/WarehouseTransferLines",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "inventory/warehousetransfers",
+    "service": "Inventory",
+    "resource": "WarehouseTransfers",
+    "uri_template": "/api/v1/{division}/inventory/WarehouseTransfers",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "logistics/customeritems",
+    "service": "Logistics",
+    "resource": "CustomerItems",
+    "uri_template": "/api/v1/{division}/logistics/CustomerItems",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "logistics/incoterms",
+    "service": "Logistics",
+    "resource": "Incoterms",
+    "uri_template": "/api/v1/{division}/logistics/Incoterms",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "logistics/itemassortment",
+    "service": "Logistics",
+    "resource": "ItemAssortment",
+    "uri_template": "/api/v1/{division}/logistics/ItemAssortment",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "logistics/itemassortmentproperty",
+    "service": "Logistics",
+    "resource": "ItemAssortmentProperty",
+    "uri_template": "/api/v1/{division}/logistics/ItemAssortmentProperty",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "logistics/itemchargerelation",
+    "service": "Logistics",
+    "resource": "ItemChargeRelation",
+    "uri_template": "/api/v1/{division}/logistics/ItemChargeRelation",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "logistics/itemgroups",
+    "service": "Logistics",
+    "resource": "ItemGroups",
+    "uri_template": "/api/v1/{division}/logistics/ItemGroups",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "logistics/itemversions",
+    "service": "Logistics",
+    "resource": "ItemVersions",
+    "uri_template": "/api/v1/{division}/logistics/ItemVersions",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "logistics/reasoncodes",
+    "service": "Logistics",
+    "resource": "ReasonCodes",
+    "uri_template": "/api/v1/{division}/logistics/ReasonCodes",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "logistics/reasoncodeslinktypes",
+    "service": "Logistics",
+    "resource": "ReasonCodesLinkTypes",
+    "uri_template": "/api/v1/{division}/logistics/ReasonCodesLinkTypes",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "logistics/salesitemprices",
+    "service": "Logistics",
+    "resource": "SalesItemPrices",
+    "uri_template": "/api/v1/{division}/logistics/SalesItemPrices",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "logistics/selectioncodes",
+    "service": "Logistics",
+    "resource": "SelectionCodes",
+    "uri_template": "/api/v1/{division}/logistics/SelectionCodes",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "logistics/supplieritem",
+    "service": "Logistics",
+    "resource": "SupplierItem",
+    "uri_template": "/api/v1/{division}/logistics/SupplierItem",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "logistics/units",
+    "service": "Logistics",
+    "resource": "Units",
+    "uri_template": "/api/v1/{division}/logistics/Units",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "mailbox/mailboxes",
+    "service": "Mailbox",
+    "resource": "Mailboxes",
+    "uri_template": "/api/v1/{division}/mailbox/Mailboxes",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "mailbox/mailmessageattachments",
+    "service": "Mailbox",
+    "resource": "MailMessageAttachments",
+    "uri_template": "/api/v1/{division}/mailbox/MailMessageAttachments",
+    "methods": [
+      "GET",
+      "POST"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "mailbox/mailmessagessent",
+    "service": "Mailbox",
+    "resource": "MailMessagesSent",
+    "uri_template": "/api/v1/{division}/mailbox/MailMessagesSent",
+    "methods": [
+      "GET",
+      "POST"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "manufacturing/billofmaterialmaterials",
+    "service": "Manufacturing",
+    "resource": "BillOfMaterialMaterials",
+    "uri_template": "/api/v1/{division}/manufacturing/BillOfMaterialMaterials",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "manufacturing/billofmaterialroutings",
+    "service": "Manufacturing",
+    "resource": "BillOfMaterialRoutings",
+    "uri_template": "/api/v1/{division}/manufacturing/BillOfMaterialRoutings",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "manufacturing/billofmaterialversions",
+    "service": "Manufacturing",
+    "resource": "BillOfMaterialVersions",
+    "uri_template": "/api/v1/{division}/manufacturing/BillOfMaterialVersions",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "manufacturing/byproductreceipts",
+    "service": "Manufacturing",
+    "resource": "ByProductReceipts",
+    "uri_template": "/api/v1/{division}/manufacturing/ByProductReceipts",
+    "methods": [
+      "GET",
+      "POST"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "manufacturing/byproductreversals",
+    "service": "Manufacturing",
+    "resource": "ByProductReversals",
+    "uri_template": "/api/v1/{division}/manufacturing/ByProductReversals",
+    "methods": [
+      "GET",
+      "POST"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "manufacturing/manufacturingsettings",
+    "service": "Manufacturing",
+    "resource": "ManufacturingSettings",
+    "uri_template": "/api/v1/{division}/manufacturing/ManufacturingSettings",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "manufacturing/materialissues",
+    "service": "Manufacturing",
+    "resource": "MaterialIssues",
+    "uri_template": "/api/v1/{division}/manufacturing/MaterialIssues",
+    "methods": [
+      "GET",
+      "POST"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "manufacturing/materialreversals",
+    "service": "Manufacturing",
+    "resource": "MaterialReversals",
+    "uri_template": "/api/v1/{division}/manufacturing/MaterialReversals",
+    "methods": [
+      "GET",
+      "POST"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "manufacturing/operationresources",
+    "service": "Manufacturing",
+    "resource": "OperationResources",
+    "uri_template": "/api/v1/{division}/manufacturing/OperationResources",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "manufacturing/operations",
+    "service": "Manufacturing",
+    "resource": "Operations",
+    "uri_template": "/api/v1/{division}/manufacturing/Operations",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "manufacturing/productionareas",
+    "service": "Manufacturing",
+    "resource": "ProductionAreas",
+    "uri_template": "/api/v1/{division}/manufacturing/ProductionAreas",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "manufacturing/shopordermaterialplans",
+    "service": "Manufacturing",
+    "resource": "ShopOrderMaterialPlans",
+    "uri_template": "/api/v1/{division}/manufacturing/ShopOrderMaterialPlans",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "manufacturing/shoporderpriorities",
+    "service": "Manufacturing",
+    "resource": "ShopOrderPriorities",
+    "uri_template": "/api/v1/{division}/manufacturing/ShopOrderPriorities",
+    "methods": [
+      "GET",
+      "PUT"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "manufacturing/shoporderreceipts",
+    "service": "Manufacturing",
+    "resource": "ShopOrderReceipts",
+    "uri_template": "/api/v1/{division}/manufacturing/ShopOrderReceipts",
+    "methods": [
+      "GET",
+      "POST"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "manufacturing/shoporderreversals",
+    "service": "Manufacturing",
+    "resource": "ShopOrderReversals",
+    "uri_template": "/api/v1/{division}/manufacturing/ShopOrderReversals",
+    "methods": [
+      "GET",
+      "POST"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "manufacturing/shoporderroutingstepplans",
+    "service": "Manufacturing",
+    "resource": "ShopOrderRoutingStepPlans",
+    "uri_template": "/api/v1/{division}/manufacturing/ShopOrderRoutingStepPlans",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "manufacturing/shoporders",
+    "service": "Manufacturing",
+    "resource": "ShopOrders",
+    "uri_template": "/api/v1/{division}/manufacturing/ShopOrders",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "manufacturing/stagefordeliveryreceipts",
+    "service": "Manufacturing",
+    "resource": "StageForDeliveryReceipts",
+    "uri_template": "/api/v1/{division}/manufacturing/StageForDeliveryReceipts",
+    "methods": [
+      "GET",
+      "POST"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "manufacturing/stagefordeliveryreversals",
+    "service": "Manufacturing",
+    "resource": "StageForDeliveryReversals",
+    "uri_template": "/api/v1/{division}/manufacturing/StageForDeliveryReversals",
+    "methods": [
+      "GET",
+      "POST"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "manufacturing/suborderreceipts",
+    "service": "Manufacturing",
+    "resource": "SubOrderReceipts",
+    "uri_template": "/api/v1/{division}/manufacturing/SubOrderReceipts",
+    "methods": [
+      "GET",
+      "POST"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "manufacturing/suborderreversals",
+    "service": "Manufacturing",
+    "resource": "SubOrderReversals",
+    "uri_template": "/api/v1/{division}/manufacturing/SubOrderReversals",
+    "methods": [
+      "GET",
+      "POST"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "manufacturing/timedtimetransactions",
+    "service": "Manufacturing",
+    "resource": "TimedTimeTransactions",
+    "uri_template": "/api/v1/{division}/manufacturing/TimedTimeTransactions",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "manufacturing/timetransactions",
+    "service": "Manufacturing",
+    "resource": "TimeTransactions",
+    "uri_template": "/api/v1/{division}/manufacturing/TimeTransactions",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "manufacturing/workcenters",
+    "service": "Manufacturing",
+    "resource": "Workcenters",
+    "uri_template": "/api/v1/{division}/manufacturing/Workcenters",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "openingbalance/currentyear/afterentry",
+    "service": "OpeningBalance",
+    "resource": "CurrentYear/AfterEntry",
+    "uri_template": "/api/v1/{division}/openingbalance/CurrentYear/AfterEntry",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "openingbalance/currentyear/processed",
+    "service": "OpeningBalance",
+    "resource": "CurrentYear/Processed",
+    "uri_template": "/api/v1/{division}/openingbalance/CurrentYear/Processed",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "openingbalance/previousyear/afterentry",
+    "service": "OpeningBalance",
+    "resource": "PreviousYear/AfterEntry",
+    "uri_template": "/api/v1/{division}/openingbalance/PreviousYear/AfterEntry",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "openingbalance/previousyear/processed",
+    "service": "OpeningBalance",
+    "resource": "PreviousYear/Processed",
+    "uri_template": "/api/v1/{division}/openingbalance/PreviousYear/Processed",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "payroll/activeemployments",
+    "service": "Payroll",
+    "resource": "ActiveEmployments",
+    "uri_template": "/api/v1/{division}/payroll/ActiveEmployments",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "payroll/employees",
+    "service": "Payroll",
+    "resource": "Employees",
+    "uri_template": "/api/v1/{division}/payroll/Employees",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "payroll/employmentconditiongroups",
+    "service": "Payroll",
+    "resource": "EmploymentConditionGroups",
+    "uri_template": "/api/v1/beta/{division}/payroll/EmploymentConditionGroups",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "payroll/employmentcontractflexphases",
+    "service": "Payroll",
+    "resource": "EmploymentContractFlexPhases",
+    "uri_template": "/api/v1/{division}/payroll/EmploymentContractFlexPhases",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "payroll/employmentcontracts",
+    "service": "Payroll",
+    "resource": "EmploymentContracts",
+    "uri_template": "/api/v1/{division}/payroll/EmploymentContracts",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "payroll/employmentendreasons",
+    "service": "Payroll",
+    "resource": "EmploymentEndReasons",
+    "uri_template": "/api/v1/{division}/payroll/EmploymentEndReasons",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "payroll/employmentorganizations",
+    "service": "Payroll",
+    "resource": "EmploymentOrganizations",
+    "uri_template": "/api/v1/{division}/payroll/EmploymentOrganizations",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "payroll/employments",
+    "service": "Payroll",
+    "resource": "Employments",
+    "uri_template": "/api/v1/{division}/payroll/Employments",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "payroll/employmentsalaries",
+    "service": "Payroll",
+    "resource": "EmploymentSalaries",
+    "uri_template": "/api/v1/{division}/payroll/EmploymentSalaries",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "payroll/employmenttaxauthoritiesgeneral",
+    "service": "Payroll",
+    "resource": "EmploymentTaxAuthoritiesGeneral",
+    "uri_template": "/api/v1/{division}/payroll/EmploymentTaxAuthoritiesGeneral",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "payroll/taxemploymentendflexcodes",
+    "service": "Payroll",
+    "resource": "TaxEmploymentEndFlexCodes",
+    "uri_template": "/api/v1/{division}/payroll/TaxEmploymentEndFlexCodes",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "payroll/variablemutations",
+    "service": "Payroll",
+    "resource": "VariableMutations",
+    "uri_template": "/api/v1/{division}/payroll/VariableMutations",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "project/costtransactions",
+    "service": "Project",
+    "resource": "CostTransactions",
+    "uri_template": "/api/v1/{division}/project/CostTransactions",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "project/employeerestrictionitems",
+    "service": "Project",
+    "resource": "EmployeeRestrictionItems",
+    "uri_template": "/api/v1/{division}/project/EmployeeRestrictionItems",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "project/employmentinternalrates",
+    "service": "Project",
+    "resource": "EmploymentInternalRates",
+    "uri_template": "/api/v1/{division}/project/EmploymentInternalRates",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "project/invoiceterms",
+    "service": "Project",
+    "resource": "InvoiceTerms",
+    "uri_template": "/api/v1/{division}/project/InvoiceTerms",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "project/projectaccountmutations",
+    "service": "Project",
+    "resource": "ProjectAccountMutations",
+    "uri_template": "/api/v1/{division}/project/ProjectAccountMutations",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "project/projectbudgettypes",
+    "service": "Project",
+    "resource": "ProjectBudgetTypes",
+    "uri_template": "/api/v1/{division}/project/ProjectBudgetTypes",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "project/projectclassifications",
+    "service": "Project",
+    "resource": "ProjectClassifications",
+    "uri_template": "/api/v1/{division}/project/ProjectClassifications",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "project/projecthourbudgets",
+    "service": "Project",
+    "resource": "ProjectHourBudgets",
+    "uri_template": "/api/v1/{division}/project/ProjectHourBudgets",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "project/projectplanning",
+    "service": "Project",
+    "resource": "ProjectPlanning",
+    "uri_template": "/api/v1/{division}/project/ProjectPlanning",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "project/projectplanningrecurring",
+    "service": "Project",
+    "resource": "ProjectPlanningRecurring",
+    "uri_template": "/api/v1/{division}/project/ProjectPlanningRecurring",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "project/projectrestrictionemployeeitems",
+    "service": "Project",
+    "resource": "ProjectRestrictionEmployeeItems",
+    "uri_template": "/api/v1/{division}/project/ProjectRestrictionEmployeeItems",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "project/projectrestrictionemployees",
+    "service": "Project",
+    "resource": "ProjectRestrictionEmployees",
+    "uri_template": "/api/v1/{division}/project/ProjectRestrictionEmployees",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "project/projectrestrictionitems",
+    "service": "Project",
+    "resource": "ProjectRestrictionItems",
+    "uri_template": "/api/v1/{division}/project/ProjectRestrictionItems",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "project/projectrestrictionrebillings",
+    "service": "Project",
+    "resource": "ProjectRestrictionRebillings",
+    "uri_template": "/api/v1/{division}/project/ProjectRestrictionRebillings",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "project/projects",
+    "service": "Project",
+    "resource": "Projects",
+    "uri_template": "/api/v1/{division}/project/Projects",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "project/timecorrections",
+    "service": "Project",
+    "resource": "TimeCorrections",
+    "uri_template": "/api/v1/{division}/project/TimeCorrections",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "project/timetransactions",
+    "service": "Project",
+    "resource": "TimeTransactions",
+    "uri_template": "/api/v1/{division}/project/TimeTransactions",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "project/wbsactivities",
+    "service": "Project",
+    "resource": "WBSActivities",
+    "uri_template": "/api/v1/{division}/project/WBSActivities",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "project/wbsdeliverables",
+    "service": "Project",
+    "resource": "WBSDeliverables",
+    "uri_template": "/api/v1/{division}/project/WBSDeliverables",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "project/wbsexpenses",
+    "service": "Project",
+    "resource": "WBSExpenses",
+    "uri_template": "/api/v1/{division}/project/WBSExpenses",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "purchase/purchaseinvoicelines",
+    "service": "Purchase",
+    "resource": "PurchaseInvoiceLines",
+    "uri_template": "/api/v1/{division}/purchase/PurchaseInvoiceLines",
+    "methods": [
+      "GET",
+      "POST"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "purchase/purchaseinvoices",
+    "service": "Purchase",
+    "resource": "PurchaseInvoices",
+    "uri_template": "/api/v1/{division}/purchase/PurchaseInvoices",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "purchaseentry/purchaseentries",
+    "service": "PurchaseEntry",
+    "resource": "PurchaseEntries",
+    "uri_template": "/api/v1/{division}/purchaseentry/PurchaseEntries",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "purchaseentry/purchaseentrylines",
+    "service": "PurchaseEntry",
+    "resource": "PurchaseEntryLines",
+    "uri_template": "/api/v1/{division}/purchaseentry/PurchaseEntryLines",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "purchaseorder/goodsreceiptlines",
+    "service": "PurchaseOrder",
+    "resource": "GoodsReceiptLines",
+    "uri_template": "/api/v1/{division}/purchaseorder/GoodsReceiptLines",
+    "methods": [
+      "GET",
+      "POST"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "purchaseorder/goodsreceipts",
+    "service": "PurchaseOrder",
+    "resource": "GoodsReceipts",
+    "uri_template": "/api/v1/{division}/purchaseorder/GoodsReceipts",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "purchaseorder/purchaseorderlines",
+    "service": "PurchaseOrder",
+    "resource": "PurchaseOrderLines",
+    "uri_template": "/api/v1/{division}/purchaseorder/PurchaseOrderLines",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "purchaseorder/purchaseorders",
+    "service": "PurchaseOrder",
+    "resource": "PurchaseOrders",
+    "uri_template": "/api/v1/{division}/purchaseorder/PurchaseOrders",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "purchaseorder/purchasereturnlines",
+    "service": "PurchaseOrder",
+    "resource": "PurchaseReturnLines",
+    "uri_template": "/api/v1/{division}/purchaseorder/PurchaseReturnLines",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "purchaseorder/purchasereturns",
+    "service": "PurchaseOrder",
+    "resource": "PurchaseReturns",
+    "uri_template": "/api/v1/{division}/purchaseorder/PurchaseReturns",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "read/crm/documents",
+    "service": "CRM",
+    "resource": "Documents",
+    "uri_template": "/api/v1/{division}/read/crm/Documents",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "read/crm/documentsattachments",
+    "service": "CRM",
+    "resource": "DocumentsAttachments",
+    "uri_template": "/api/v1/{division}/read/crm/DocumentsAttachments",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "read/crm/opportunitycontacts",
+    "service": "CRM",
+    "resource": "OpportunityContacts",
+    "uri_template": "/api/v1/{division}/read/crm/OpportunityContacts",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "read/financial/agingoverview",
+    "service": "Financial",
+    "resource": "AgingOverview",
+    "uri_template": "/api/v1/{division}/read/financial/AgingOverview",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "read/financial/outstandinginvoicesoverview",
+    "service": "Financial",
+    "resource": "OutstandingInvoicesOverview",
+    "uri_template": "/api/v1/{division}/read/financial/OutstandingInvoicesOverview",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "read/financial/payableslist",
+    "service": "Financial",
+    "resource": "PayablesList",
+    "uri_template": "/api/v1/{division}/read/financial/PayablesList",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "read/financial/profitlossoverview",
+    "service": "Financial",
+    "resource": "ProfitLossOverview",
+    "uri_template": "/api/v1/{division}/read/financial/ProfitLossOverview",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "read/financial/returns",
+    "service": "Financial",
+    "resource": "Returns",
+    "uri_template": "/api/v1/{division}/read/financial/Returns",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "read/financial/revenuelist",
+    "service": "Financial",
+    "resource": "RevenueList",
+    "uri_template": "/api/v1/{division}/read/financial/RevenueList",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "sales/ordercharges",
+    "service": "Sales",
+    "resource": "OrderCharges",
+    "uri_template": "/api/v1/{division}/sales/OrderCharges",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "sales/saleschannels",
+    "service": "Sales",
+    "resource": "SalesChannels",
+    "uri_template": "/api/v1/{division}/sales/SalesChannels",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "sales/salespricelistlinkedaccounts",
+    "service": "Sales",
+    "resource": "SalesPriceListLinkedAccounts",
+    "uri_template": "/api/v1/{division}/sales/SalesPriceListLinkedAccounts",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "sales/salespricelistperiods",
+    "service": "Sales",
+    "resource": "SalesPriceListPeriods",
+    "uri_template": "/api/v1/{division}/sales/SalesPriceListPeriods",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "sales/salespricelists",
+    "service": "Sales",
+    "resource": "SalesPriceLists",
+    "uri_template": "/api/v1/{division}/sales/SalesPriceLists",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "sales/salespricelistvolumediscounts",
+    "service": "Sales",
+    "resource": "SalesPriceListVolumeDiscounts",
+    "uri_template": "/api/v1/{division}/sales/SalesPriceListVolumeDiscounts",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "sales/shippingmethods",
+    "service": "Sales",
+    "resource": "ShippingMethods",
+    "uri_template": "/api/v1/{division}/sales/ShippingMethods",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "salesentry/salesentries",
+    "service": "SalesEntry",
+    "resource": "SalesEntries",
+    "uri_template": "/api/v1/{division}/salesentry/SalesEntries",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "salesentry/salesentrylines",
+    "service": "SalesEntry",
+    "resource": "SalesEntryLines",
+    "uri_template": "/api/v1/{division}/salesentry/SalesEntryLines",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "salesinvoice/invoicesalesorders",
+    "service": "SalesInvoice",
+    "resource": "InvoiceSalesOrders",
+    "uri_template": "/api/v1/{division}/salesinvoice/InvoiceSalesOrders",
+    "methods": [
+      "POST"
+    ],
+    "post_only_action": true,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "salesinvoice/layouts",
+    "service": "SalesInvoice",
+    "resource": "Layouts",
+    "uri_template": "/api/v1/{division}/salesinvoice/Layouts",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "salesinvoice/printedsalesinvoices",
+    "service": "SalesInvoice",
+    "resource": "PrintedSalesInvoices",
+    "uri_template": "/api/v1/{division}/salesinvoice/PrintedSalesInvoices",
+    "methods": [
+      "POST"
+    ],
+    "post_only_action": true,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "salesinvoice/salesinvoicelines",
+    "service": "SalesInvoice",
+    "resource": "SalesInvoiceLines",
+    "uri_template": "/api/v1/{division}/salesinvoice/SalesInvoiceLines",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "salesinvoice/salesinvoiceorderchargelines",
+    "service": "SalesInvoice",
+    "resource": "SalesInvoiceOrderChargeLines",
+    "uri_template": "/api/v1/{division}/salesinvoice/SalesInvoiceOrderChargeLines",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "salesinvoice/salesinvoices",
+    "service": "SalesInvoice",
+    "resource": "SalesInvoices",
+    "uri_template": "/api/v1/{division}/salesinvoice/SalesInvoices",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "salesorder/completesalesorder",
+    "service": "SalesOrder",
+    "resource": "CompleteSalesOrder",
+    "uri_template": "/api/v1/{division}/salesorder/CompleteSalesOrder",
+    "methods": [
+      "POST"
+    ],
+    "post_only_action": true,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "salesorder/completesalesorderline",
+    "service": "SalesOrder",
+    "resource": "CompleteSalesOrderLine",
+    "uri_template": "/api/v1/{division}/salesorder/CompleteSalesOrderLine",
+    "methods": [
+      "POST"
+    ],
+    "post_only_action": true,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "salesorder/dropshipmentlines",
+    "service": "SalesOrder",
+    "resource": "DropShipmentLines",
+    "uri_template": "/api/v1/{division}/salesorder/DropShipmentLines",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "salesorder/dropshipments",
+    "service": "SalesOrder",
+    "resource": "DropShipments",
+    "uri_template": "/api/v1/{division}/salesorder/DropShipments",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "salesorder/goodsdeliverylines",
+    "service": "SalesOrder",
+    "resource": "GoodsDeliveryLines",
+    "uri_template": "/api/v1/{division}/salesorder/GoodsDeliveryLines",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "salesorder/plannedsalesreturnlines",
+    "service": "SalesOrder",
+    "resource": "PlannedSalesReturnLines",
+    "uri_template": "/api/v1/{division}/salesorder/PlannedSalesReturnLines",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "salesorder/plannedsalesreturns",
+    "service": "SalesOrder",
+    "resource": "PlannedSalesReturns",
+    "uri_template": "/api/v1/{division}/salesorder/PlannedSalesReturns",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "salesorder/printedsalesorders",
+    "service": "SalesOrder",
+    "resource": "PrintedSalesOrders",
+    "uri_template": "/api/v1/{division}/salesorder/PrintedSalesOrders",
+    "methods": [
+      "POST"
+    ],
+    "post_only_action": true,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "salesorder/salesorderorderchargelines",
+    "service": "SalesOrder",
+    "resource": "SalesOrderOrderChargeLines",
+    "uri_template": "/api/v1/{division}/salesorder/SalesOrderOrderChargeLines",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "subscription/subscriptionlines",
+    "service": "Subscription",
+    "resource": "SubscriptionLines",
+    "uri_template": "/api/v1/{division}/subscription/SubscriptionLines",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "subscription/subscriptionlinetypes",
+    "service": "Subscription",
+    "resource": "SubscriptionLineTypes",
+    "uri_template": "/api/v1/{division}/subscription/SubscriptionLineTypes",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "subscription/subscriptionreasoncodes",
+    "service": "Subscription",
+    "resource": "SubscriptionReasonCodes",
+    "uri_template": "/api/v1/{division}/subscription/SubscriptionReasonCodes",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "subscription/subscriptionrestrictionemployees",
+    "service": "Subscription",
+    "resource": "SubscriptionRestrictionEmployees",
+    "uri_template": "/api/v1/{division}/subscription/SubscriptionRestrictionEmployees",
+    "methods": [
+      "GET",
+      "POST",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "subscription/subscriptionrestrictionitems",
+    "service": "Subscription",
+    "resource": "SubscriptionRestrictionItems",
+    "uri_template": "/api/v1/{division}/subscription/SubscriptionRestrictionItems",
+    "methods": [
+      "GET",
+      "POST",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "subscription/subscriptions",
+    "service": "Subscription",
+    "resource": "Subscriptions",
+    "uri_template": "/api/v1/{division}/subscription/Subscriptions",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "subscription/subscriptiontypes",
+    "service": "Subscription",
+    "resource": "SubscriptionTypes",
+    "uri_template": "/api/v1/{division}/subscription/SubscriptionTypes",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "sync/cashflow/paymentterms",
+    "service": "Sync",
+    "resource": "Cashflow/PaymentTerms",
+    "uri_template": "/api/v1/{division}/sync/Cashflow/PaymentTerms",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "sync/crm/accounts",
+    "service": "Sync",
+    "resource": "CRM/Accounts",
+    "uri_template": "/api/v1/{division}/sync/CRM/Accounts",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "sync/crm/addresses",
+    "service": "Sync",
+    "resource": "CRM/Addresses",
+    "uri_template": "/api/v1/{division}/sync/CRM/Addresses",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "sync/crm/contacts",
+    "service": "Sync",
+    "resource": "CRM/Contacts",
+    "uri_template": "/api/v1/{division}/sync/CRM/Contacts",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "sync/crm/quotationheaders",
+    "service": "Sync",
+    "resource": "CRM/QuotationHeaders",
+    "uri_template": "/api/v1/{division}/sync/CRM/QuotationHeaders",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "sync/crm/quotationlines",
+    "service": "Sync",
+    "resource": "CRM/QuotationLines",
+    "uri_template": "/api/v1/{division}/sync/CRM/QuotationLines",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "sync/deleted",
+    "service": "Sync",
+    "resource": "Deleted",
+    "uri_template": "/api/v1/{division}/sync/Deleted",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "sync/documents/documentattachments",
+    "service": "Sync",
+    "resource": "Documents/DocumentAttachments",
+    "uri_template": "/api/v1/{division}/sync/Documents/DocumentAttachments",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "sync/documents/documents",
+    "service": "Sync",
+    "resource": "Documents/Documents",
+    "uri_template": "/api/v1/{division}/sync/Documents/Documents",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "sync/financial/glaccounts",
+    "service": "Sync",
+    "resource": "Financial/GLAccounts",
+    "uri_template": "/api/v1/{division}/sync/Financial/GLAccounts",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "sync/financial/glclassifications",
+    "service": "Sync",
+    "resource": "Financial/GLClassifications",
+    "uri_template": "/api/v1/{division}/sync/Financial/GLClassifications",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "sync/financial/purchaseentries",
+    "service": "Sync",
+    "resource": "Financial/PurchaseEntries",
+    "uri_template": "/api/v1/{division}/sync/Financial/PurchaseEntries",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "sync/financial/salesentries",
+    "service": "Sync",
+    "resource": "Financial/SalesEntries",
+    "uri_template": "/api/v1/{division}/sync/Financial/SalesEntries",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "sync/financial/transactionlines",
+    "service": "Sync",
+    "resource": "Financial/TransactionLines",
+    "uri_template": "/api/v1/{division}/sync/Financial/TransactionLines",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "sync/hrm/absenceregistrations",
+    "service": "Sync",
+    "resource": "HRM/AbsenceRegistrations",
+    "uri_template": "/api/v1/{division}/sync/HRM/AbsenceRegistrations",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "sync/hrm/absenceregistrationtransactions",
+    "service": "Sync",
+    "resource": "HRM/AbsenceRegistrationTransactions",
+    "uri_template": "/api/v1/{division}/sync/HRM/AbsenceRegistrationTransactions",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "sync/hrm/leaveabsencehoursbyday",
+    "service": "Sync",
+    "resource": "HRM/LeaveAbsenceHoursByDay",
+    "uri_template": "/api/v1/{division}/sync/HRM/LeaveAbsenceHoursByDay",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "sync/hrm/leavebuildupregistrations",
+    "service": "Sync",
+    "resource": "HRM/LeaveBuildUpRegistrations",
+    "uri_template": "/api/v1/{division}/sync/HRM/LeaveBuildUpRegistrations",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "sync/hrm/leaveregistrations",
+    "service": "Sync",
+    "resource": "HRM/LeaveRegistrations",
+    "uri_template": "/api/v1/{division}/sync/HRM/LeaveRegistrations",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "sync/hrm/scheduleentries",
+    "service": "Sync",
+    "resource": "HRM/ScheduleEntries",
+    "uri_template": "/api/v1/{division}/sync/HRM/ScheduleEntries",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "sync/hrm/schedules",
+    "service": "Sync",
+    "resource": "HRM/Schedules",
+    "uri_template": "/api/v1/{division}/sync/HRM/Schedules",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "sync/inventory/itemstoragelocations",
+    "service": "Sync",
+    "resource": "Inventory/ItemStorageLocations",
+    "uri_template": "/api/v1/{division}/sync/Inventory/ItemStorageLocations",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "sync/inventory/itemwarehouses",
+    "service": "Sync",
+    "resource": "Inventory/ItemWarehouses",
+    "uri_template": "/api/v1/{division}/sync/Inventory/ItemWarehouses",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "sync/inventory/serialbatchnumbers",
+    "service": "Sync",
+    "resource": "Inventory/SerialBatchNumbers",
+    "uri_template": "/api/v1/{division}/sync/Inventory/SerialBatchNumbers",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "sync/inventory/stockpositions",
+    "service": "Sync",
+    "resource": "Inventory/StockPositions",
+    "uri_template": "/api/v1/{division}/sync/Inventory/StockPositions",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "sync/inventory/stockserialbatchnumbers",
+    "service": "Sync",
+    "resource": "Inventory/StockSerialBatchNumbers",
+    "uri_template": "/api/v1/{division}/sync/Inventory/StockSerialBatchNumbers",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "sync/inventory/storagelocationstockpositions",
+    "service": "Sync",
+    "resource": "Inventory/StorageLocationStockPositions",
+    "uri_template": "/api/v1/{division}/sync/Inventory/StorageLocationStockPositions",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "sync/logistics/items",
+    "service": "Sync",
+    "resource": "Logistics/Items",
+    "uri_template": "/api/v1/{division}/sync/Logistics/Items",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "sync/logistics/purchaseitemprices",
+    "service": "Sync",
+    "resource": "Logistics/PurchaseItemPrices",
+    "uri_template": "/api/v1/{division}/sync/Logistics/PurchaseItemPrices",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "sync/logistics/salesitemprices",
+    "service": "Sync",
+    "resource": "Logistics/SalesItemPrices",
+    "uri_template": "/api/v1/{division}/sync/Logistics/SalesItemPrices",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "sync/logistics/supplieritem",
+    "service": "Sync",
+    "resource": "Logistics/SupplierItem",
+    "uri_template": "/api/v1/{division}/sync/Logistics/SupplierItem",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "sync/manufacturing/billofmaterialmaterials",
+    "service": "Sync",
+    "resource": "Manufacturing/BillOfMaterialMaterials",
+    "uri_template": "/api/v1/{division}/sync/Manufacturing/BillOfMaterialMaterials",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "sync/manufacturing/billofmaterialversions",
+    "service": "Sync",
+    "resource": "Manufacturing/BillOfMaterialVersions",
+    "uri_template": "/api/v1/{division}/sync/Manufacturing/BillOfMaterialVersions",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "sync/manufacturing/materialissues",
+    "service": "Sync",
+    "resource": "Manufacturing/MaterialIssues",
+    "uri_template": "/api/v1/{division}/sync/Manufacturing/MaterialIssues",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "sync/manufacturing/shopordermaterialplans",
+    "service": "Sync",
+    "resource": "Manufacturing/ShopOrderMaterialPlans",
+    "uri_template": "/api/v1/{division}/sync/Manufacturing/ShopOrderMaterialPlans",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "sync/manufacturing/shoporderpurchaseplanning",
+    "service": "Sync",
+    "resource": "Manufacturing/ShopOrderPurchasePlanning",
+    "uri_template": "/api/v1/{division}/sync/Manufacturing/ShopOrderPurchasePlanning",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "sync/manufacturing/shoporderroutingstepplans",
+    "service": "Sync",
+    "resource": "Manufacturing/ShopOrderRoutingStepPlans",
+    "uri_template": "/api/v1/{division}/sync/Manufacturing/ShopOrderRoutingStepPlans",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "sync/manufacturing/shoporders",
+    "service": "Sync",
+    "resource": "Manufacturing/ShopOrders",
+    "uri_template": "/api/v1/{division}/sync/Manufacturing/ShopOrders",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "sync/manufacturing/shopordersuborders",
+    "service": "Sync",
+    "resource": "Manufacturing/ShopOrderSubOrders",
+    "uri_template": "/api/v1/{division}/sync/Manufacturing/ShopOrderSubOrders",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "sync/payroll/bankaccounts",
+    "service": "Sync",
+    "resource": "Payroll/BankAccounts",
+    "uri_template": "/api/v1/{division}/sync/Payroll/BankAccounts",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "sync/payroll/employees",
+    "service": "Sync",
+    "resource": "Payroll/Employees",
+    "uri_template": "/api/v1/{division}/sync/Payroll/Employees",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "sync/payroll/employmentclas",
+    "service": "Sync",
+    "resource": "Payroll/EmploymentCLAs",
+    "uri_template": "/api/v1/{division}/sync/Payroll/EmploymentCLAs",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "sync/payroll/employmentcontracts",
+    "service": "Sync",
+    "resource": "Payroll/EmploymentContracts",
+    "uri_template": "/api/v1/{division}/sync/Payroll/EmploymentContracts",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "sync/payroll/employmentorganizations",
+    "service": "Sync",
+    "resource": "Payroll/EmploymentOrganizations",
+    "uri_template": "/api/v1/{division}/sync/Payroll/EmploymentOrganizations",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "sync/payroll/employments",
+    "service": "Sync",
+    "resource": "Payroll/Employments",
+    "uri_template": "/api/v1/{division}/sync/Payroll/Employments",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "sync/payroll/employmentsalaries",
+    "service": "Sync",
+    "resource": "Payroll/EmploymentSalaries",
+    "uri_template": "/api/v1/{division}/sync/Payroll/EmploymentSalaries",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "sync/payroll/employmenttaxauthoritiesgeneral",
+    "service": "Sync",
+    "resource": "Payroll/EmploymentTaxAuthoritiesGeneral",
+    "uri_template": "/api/v1/{division}/sync/Payroll/EmploymentTaxAuthoritiesGeneral",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "sync/project/projectplanning",
+    "service": "Sync",
+    "resource": "Project/ProjectPlanning",
+    "uri_template": "/api/v1/{division}/sync/Project/ProjectPlanning",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "sync/project/projects",
+    "service": "Sync",
+    "resource": "Project/Projects",
+    "uri_template": "/api/v1/{division}/sync/Project/Projects",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "sync/project/projectwbs",
+    "service": "Sync",
+    "resource": "Project/ProjectWBS",
+    "uri_template": "/api/v1/{division}/sync/Project/ProjectWBS",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "sync/project/timecosttransactions",
+    "service": "Sync",
+    "resource": "Project/TimeCostTransactions",
+    "uri_template": "/api/v1/{division}/sync/Project/TimeCostTransactions",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "sync/purchaseorder/purchaseorders",
+    "service": "Sync",
+    "resource": "PurchaseOrder/PurchaseOrders",
+    "uri_template": "/api/v1/{division}/sync/PurchaseOrder/PurchaseOrders",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "sync/sales/salespricelistvolumediscounts",
+    "service": "Sync",
+    "resource": "Sales/SalesPriceListVolumeDiscounts",
+    "uri_template": "/api/v1/{division}/sync/Sales/SalesPriceListVolumeDiscounts",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "sync/salesinvoice/salesinvoices",
+    "service": "Sync",
+    "resource": "SalesInvoice/SalesInvoices",
+    "uri_template": "/api/v1/{division}/sync/SalesInvoice/SalesInvoices",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "sync/salesorder/goodsdeliveries",
+    "service": "Sync",
+    "resource": "SalesOrder/GoodsDeliveries",
+    "uri_template": "/api/v1/{division}/sync/SalesOrder/GoodsDeliveries",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "sync/salesorder/goodsdeliverylines",
+    "service": "Sync",
+    "resource": "SalesOrder/GoodsDeliveryLines",
+    "uri_template": "/api/v1/{division}/sync/SalesOrder/GoodsDeliveryLines",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "sync/salesorder/salesorderheaders",
+    "service": "Sync",
+    "resource": "SalesOrder/SalesOrderHeaders",
+    "uri_template": "/api/v1/{division}/sync/SalesOrder/SalesOrderHeaders",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "sync/salesorder/salesorderlines",
+    "service": "Sync",
+    "resource": "SalesOrder/SalesOrderLines",
+    "uri_template": "/api/v1/{division}/sync/SalesOrder/SalesOrderLines",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "sync/subscription/subscriptionlines",
+    "service": "Sync",
+    "resource": "Subscription/SubscriptionLines",
+    "uri_template": "/api/v1/{division}/sync/Subscription/SubscriptionLines",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "sync/subscription/subscriptions",
+    "service": "Sync",
+    "resource": "Subscription/Subscriptions",
+    "uri_template": "/api/v1/{division}/sync/Subscription/Subscriptions",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "system/accountantinfo",
+    "service": "System",
+    "resource": "AccountantInfo",
+    "uri_template": "/api/v1/{division}/system/AccountantInfo",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "system/alldivisions",
+    "service": "System",
+    "resource": "AllDivisions",
+    "uri_template": "/api/v1/{division}/system/AllDivisions",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "system/availablefeatures",
+    "service": "System",
+    "resource": "AvailableFeatures",
+    "uri_template": "/api/v1/{division}/system/AvailableFeatures",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "system/getmostrecentlyuseddivisions",
+    "service": "System",
+    "resource": "GetMostRecentlyUsedDivisions",
+    "uri_template": "/api/v1/{division}/system/GetMostRecentlyUsedDivisions",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "users/userroles",
+    "service": "Users",
+    "resource": "UserRoles",
+    "uri_template": "/api/v1/{division}/users/UserRoles",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "users/userrolesperdivision",
+    "service": "Users",
+    "resource": "UserRolesPerDivision",
+    "uri_template": "/api/v1/{division}/users/UserRolesPerDivision",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "vat/vatpercentages",
+    "service": "VAT",
+    "resource": "VatPercentages",
+    "uri_template": "/api/v1/{division}/vat/VatPercentages",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "webhooks/webhooksubscriptions",
+    "service": "Webhooks",
+    "resource": "WebhookSubscriptions",
+    "uri_template": "/api/v1/{division}/webhooks/WebhookSubscriptions",
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  },
+  {
+    "id": "workflow/requestattachments",
+    "service": "Workflow",
+    "resource": "RequestAttachments",
+    "uri_template": "/api/v1/beta/{division}/workflow/RequestAttachments",
+    "methods": [
+      "GET"
+    ],
+    "post_only_action": false,
+    "key_fields": [],
+    "readable_fields": [],
+    "post_fields": [],
+    "put_fields": [],
+    "parameters": []
+  }
+]

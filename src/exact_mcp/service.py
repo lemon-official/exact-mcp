@@ -1,19 +1,180 @@
 """High-level Exact Online workflows exposed through MCP."""
 
+import re
 from decimal import Decimal
 from typing import Any, cast
 from uuid import UUID
 
 from exact_mcp.client import ExactClient
+from exact_mcp.endpoints import EndpointRegistry, EndpointSpec, load_registry
 from exact_mcp.errors import AmbiguousMatchError, NotFoundError, ValidationFailedError
-from exact_mcp.models import DraftSalesOrderRequest, GoodsDeliveryRequest
-from exact_mcp.odata import and_, contains, eq, or_, query_params
+from exact_mcp.models import (
+    DraftSalesOrderRequest,
+    EndpointActionRequest,
+    EndpointCreateRequest,
+    EndpointDeleteRequest,
+    EndpointReadRequest,
+    EndpointUpdateRequest,
+    GoodsDeliveryRequest,
+)
+from exact_mcp.odata import (
+    and_,
+    comparison,
+    contains,
+    eq,
+    key_predicate,
+    or_,
+    query_params,
+    startswith,
+)
+
+_FIELD_NAME = re.compile(r"^[A-Za-z_][A-Za-z0-9_]*$")
 
 
 class ExactService:
-    def __init__(self, client: ExactClient) -> None:
+    def __init__(self, client: ExactClient, *, registry: EndpointRegistry | None = None) -> None:
         self.client = client
+        self.registry = registry or load_registry()
         self.active_warehouse_id: UUID | None = None
+
+    def endpoints_list(
+        self,
+        *,
+        service: str | None = None,
+        method: str | None = None,
+        query: str = "",
+        limit: int = 50,
+        offset: int = 0,
+    ) -> dict[str, Any]:
+        return self.registry.search(
+            service=service, method=method, query=query, limit=limit, offset=offset
+        )
+
+    async def endpoint_read(self, request: EndpointReadRequest) -> dict[str, Any]:
+        spec = self._endpoint_for(request.endpoint, "GET")
+        self._validate_fields(spec, request.select, "readable")
+        expressions: list[str] = []
+        for item in request.filters:
+            self._validate_fields(spec, [item.field], "readable")
+            if item.operator in {"startswith", "contains"}:
+                if not isinstance(item.value, str):
+                    raise ValidationFailedError(f"{item.operator} requires a string filter value")
+                expression = (
+                    startswith(item.field, item.value)
+                    if item.operator == "startswith"
+                    else contains(item.field, item.value)
+                )
+            else:
+                try:
+                    expression = comparison(item.field, item.operator, item.value)
+                except (TypeError, ValueError) as exc:
+                    raise ValidationFailedError("invalid endpoint filter") from exc
+            expressions.append(expression)
+        params = self._parameters(spec, request.parameters)
+        params["$top"] = str(request.limit)
+        params["$skip"] = str(request.offset)
+        if request.select:
+            params["$select"] = ",".join(request.select)
+        if expressions:
+            params["$filter"] = and_(*expressions) if len(expressions) > 1 else expressions[0]
+        if request.order_by:
+            order_parts: list[str] = []
+            for order in request.order_by:
+                descending = order.startswith("-")
+                field = order[1:] if descending else order
+                self._validate_fields(spec, [field], "readable")
+                order_parts.append(field + (" desc" if descending else ""))
+            params["$orderby"] = ",".join(order_parts)
+        suffix = self._key_suffix(request.key)
+        data = await self.client.request_endpoint("GET", spec, key_suffix=suffix, params=params)
+        return {"endpoint": spec.id, "data": data}
+
+    async def endpoint_create(self, request: EndpointCreateRequest) -> dict[str, Any]:
+        spec = self._endpoint_for(request.endpoint, "POST")
+        if spec.post_only_action:
+            raise ValidationFailedError("POST-only endpoints must use endpoint_action")
+        return await self._write("POST", spec, request.payload, request.parameters, request.confirm)
+
+    async def endpoint_update(self, request: EndpointUpdateRequest) -> dict[str, Any]:
+        spec = self._endpoint_for(request.endpoint, "PUT")
+        return await self._write(
+            "PUT",
+            spec,
+            request.payload,
+            request.parameters,
+            request.confirm,
+            key=request.key,
+        )
+
+    async def endpoint_delete(self, request: EndpointDeleteRequest) -> dict[str, Any]:
+        spec = self._endpoint_for(request.endpoint, "DELETE")
+        return await self._write(
+            "DELETE", spec, {}, request.parameters, request.confirm, key=request.key
+        )
+
+    async def endpoint_action(self, request: EndpointActionRequest) -> dict[str, Any]:
+        spec = self._endpoint_for(request.endpoint, "POST")
+        if not spec.post_only_action:
+            raise ValidationFailedError("endpoint is not a POST-only action")
+        return await self._write("POST", spec, request.payload, request.parameters, request.confirm)
+
+    async def _write(
+        self,
+        method: str,
+        spec: EndpointSpec,
+        payload: dict[str, Any],
+        parameters: dict[str, Any],
+        confirm: bool,
+        *,
+        key: dict[str, Any] | None = None,
+    ) -> dict[str, Any]:
+        if not confirm:
+            raise ValidationFailedError("confirm=true is required for endpoint mutations")
+        field_kind = "post" if method == "POST" else "put"
+        if method != "DELETE":
+            self._validate_fields(spec, payload, field_kind)
+        params = self._parameters(spec, parameters)
+        suffix = self._key_suffix(key)
+        data = await self.client.request_endpoint(
+            method, spec, key_suffix=suffix, params=params, json=payload or None
+        )
+        return {"endpoint": spec.id, "data": data}
+
+    def _endpoint_for(self, endpoint: str, method: str) -> EndpointSpec:
+        spec = self.registry.get(endpoint)
+        if method not in spec.methods:
+            raise ValidationFailedError(f"{method} is not supported for endpoint {endpoint}")
+        return spec
+
+    def _validate_fields(self, spec: EndpointSpec, fields: Any, kind: str) -> None:
+        values = list(fields)
+        allowed = set(getattr(spec, f"{kind}_fields"))
+        invalid = [field for field in values if not _FIELD_NAME.fullmatch(str(field))]
+        if invalid:
+            raise ValidationFailedError("endpoint fields must be simple identifiers")
+        if allowed:
+            unknown = set(values) - allowed
+            if unknown:
+                raise ValidationFailedError(
+                    f"fields are not documented for {spec.id}: {', '.join(sorted(unknown))}"
+                )
+
+    def _parameters(self, spec: EndpointSpec, parameters: dict[str, Any]) -> dict[str, str]:
+        invalid = [name for name in parameters if not _FIELD_NAME.fullmatch(name)]
+        if invalid:
+            raise ValidationFailedError("endpoint parameter names are invalid")
+        if spec.parameters and not set(parameters) <= set(spec.parameters):
+            raise ValidationFailedError("endpoint contains undocumented parameters")
+        return {name: str(value) for name, value in parameters.items()}
+
+    @staticmethod
+    def _key_suffix(key: dict[str, Any] | None) -> str:
+        if key is None:
+            return ""
+        try:
+            return key_predicate(key)
+        except (TypeError, ValueError) as exc:
+            raise ValidationFailedError("invalid endpoint entity key") from exc
 
     async def administration_current(self) -> dict[str, Any]:
         user = await self.client.current_user()

@@ -1,6 +1,18 @@
+from uuid import UUID
+
 import pytest
 
-from exact_mcp.odata import and_, contains, eq, or_, query_params, quote, startswith
+from exact_mcp.odata import (
+    and_,
+    comparison,
+    contains,
+    eq,
+    key_predicate,
+    or_,
+    query_params,
+    quote,
+    startswith,
+)
 
 
 def test_quote_escapes_odata_string_literals() -> None:
@@ -40,3 +52,19 @@ def test_query_params_reject_unknown_fields_and_unbounded_top() -> None:
         query_params(select=("Secret",), allowed_fields={"ID"}, top=1)
     with pytest.raises(ValueError, match="between 1 and 60"):
         query_params(select=("ID",), allowed_fields={"ID"}, top=61)
+
+
+def test_comparison_supports_safe_operators_only() -> None:
+    assert comparison("Amount", "ge", 10) == "Amount ge 10"
+    with pytest.raises(ValueError, match="operator"):
+        comparison("Amount", "drop", 10)
+
+
+def test_key_predicate_formats_single_and_composite_keys() -> None:
+    identifier = UUID("11111111-1111-1111-1111-111111111111")
+
+    assert key_predicate({"ID": identifier}) == "(guid'11111111-1111-1111-1111-111111111111')"
+    assert key_predicate({"ID": str(identifier)}) == (
+        "(guid'11111111-1111-1111-1111-111111111111')"
+    )
+    assert key_predicate({"Code": "A", "Line": 2}) == "(Code='A',Line=2)"
