@@ -32,9 +32,7 @@ _FIELD_NAME = re.compile(r"^[A-Za-z_][A-Za-z0-9_]*$")
 
 
 class ExactService:
-    def __init__(
-        self, client: ExactClient, *, registry: EndpointRegistry | None = None
-    ) -> None:
+    def __init__(self, client: ExactClient, *, registry: EndpointRegistry | None = None) -> None:
         self.client = client
         self.registry = registry or load_registry()
         self.active_warehouse_id: UUID | None = None
@@ -60,9 +58,7 @@ class ExactService:
             self._validate_fields(spec, [item.field], "readable")
             if item.operator in {"startswith", "contains"}:
                 if not isinstance(item.value, str):
-                    raise ValidationFailedError(
-                        f"{item.operator} requires a string filter value"
-                    )
+                    raise ValidationFailedError(f"{item.operator} requires a string filter value")
                 expression = (
                     startswith(item.field, item.value)
                     if item.operator == "startswith"
@@ -150,9 +146,7 @@ class ExactService:
             raise ValidationFailedError(f"{method} is not supported for endpoint {endpoint}")
         return spec
 
-    def _validate_fields(
-        self, spec: EndpointSpec, fields: Any, kind: str
-    ) -> None:
+    def _validate_fields(self, spec: EndpointSpec, fields: Any, kind: str) -> None:
         values = list(fields)
         allowed = set(getattr(spec, f"{kind}_fields"))
         invalid = [field for field in values if not _FIELD_NAME.fullmatch(str(field))]

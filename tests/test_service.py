@@ -222,9 +222,7 @@ async def test_generic_mutations_require_confirmation_and_dispatch_methods() -> 
     assert client.calls == []
 
     await service.endpoint_create(
-        EndpointCreateRequest(
-            endpoint="crm/addresses", payload={"City": "Amsterdam"}, confirm=True
-        )
+        EndpointCreateRequest(endpoint="crm/addresses", payload={"City": "Amsterdam"}, confirm=True)
     )
     await service.endpoint_update(
         EndpointUpdateRequest(
@@ -235,9 +233,7 @@ async def test_generic_mutations_require_confirmation_and_dispatch_methods() -> 
         )
     )
     await service.endpoint_delete(
-        EndpointDeleteRequest(
-            endpoint="crm/addresses", key={"ID": "address-id"}, confirm=True
-        )
+        EndpointDeleteRequest(endpoint="crm/addresses", key={"ID": "address-id"}, confirm=True)
     )
     await service.endpoint_action(
         EndpointActionRequest(

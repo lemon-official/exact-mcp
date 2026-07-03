@@ -156,6 +156,34 @@ The core tools described by the PRD are:
 
 Supporting read-only tools cover administration selection, account and item searches, VAT codes, warehouses, sales orders, and sales-order lines.
 
+### Generic endpoint gateway
+
+The checked-in endpoint registry exposes 330 additional Exact Online resources without
+allowing callers to provide arbitrary URLs. Start with `exact_endpoints_list` and pass the
+returned endpoint ID to one of these tools:
+
+- `exact_endpoint_read` accepts selected fields, structured filters, ordering, named
+  function parameters, and bounded pagination.
+- `exact_endpoint_create` and `exact_endpoint_update` perform ordinary resource writes.
+- `exact_endpoint_delete` deletes a keyed resource.
+- `exact_endpoint_action` invokes POST-only actions such as quotation state changes.
+
+Every write requires `confirm=true`. Updates and deletes use a `key` object; for example,
+`{"ID": "11111111-1111-1111-1111-111111111111"}`. Responses preserve Exact's resource
+payload under `data` and include the resolved registry ID under `endpoint`.
+
+Endpoint availability still depends on the authenticated Exact identity, subscription,
+administration, and OAuth scopes. An endpoint advertised by the registry can therefore
+return a sanitized `403` or `404` from tenants where the corresponding module is unavailable.
+
+Regenerate the registry after reviewing upstream Exact documentation:
+
+```bash
+.venv/bin/python scripts/generate_endpoint_registry.py \
+  --catalog docs/plans/2026-07-03-all-endpoints-implementation.md \
+  --output src/exact_mcp/endpoint_registry.json
+```
+
 One server process is scoped to one Exact identity. Changing the active administration clears administration-specific warehouse and lookup state.
 
 ## Development checks
@@ -177,6 +205,7 @@ The default test suite uses mocked HTTP transports and never calls Exact Online.
 - Exact applies per-division minutely and daily API limits. The server tracks response headers, reserves capacity, and backs off on throttling.
 - Ordinary `400`, `401`, `403`, and `404` responses are not retried automatically because Exact also limits repeated errors.
 - Raw OData filters are not accepted from MCP callers. Search fields, selected fields, page sizes, and sort fields are allowlisted.
+- Generic gateway callers select registered endpoint IDs; raw URLs and path fragments are never accepted.
 - Exact Online REST does not support payment/invoice reconciliation. This server does not emulate that operation.
 - Never share `.env`, `tokens.enc`, client secrets, refresh tokens, or the Fernet key with an AI client.
 

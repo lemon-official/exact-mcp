@@ -104,11 +104,7 @@ class EndpointRegistry:
             for item in self._items
             if (service is None or item.service.casefold() == service.casefold())
             and (normalized_method is None or normalized_method in item.methods)
-            and (
-                not needle
-                or needle in item.id.casefold()
-                or needle in item.resource.casefold()
-            )
+            and (not needle or needle in item.id.casefold() or needle in item.resource.casefold())
         ]
         page = matches[offset : offset + limit]
         return {

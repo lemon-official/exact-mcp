@@ -282,9 +282,7 @@ class ExactClient:
     ) -> Any:
         """Call a pre-validated registry endpoint without accepting a caller URL."""
         if method not in endpoint.methods:
-            raise ValidationFailedError(
-                f"{method} is not supported for endpoint {endpoint.id}"
-            )
+            raise ValidationFailedError(f"{method} is not supported for endpoint {endpoint.id}")
         if self._division is None:
             await self.current_user()
         if self._division is None:
