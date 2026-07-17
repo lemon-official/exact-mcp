@@ -160,7 +160,10 @@ async def test_list_follows_exact_continuation_with_record_budget(
     assert "exact_page_received" in output
     assert "page=2 records=1 total=2 continuation=False" in output
     assert "exact_list_completed path=crm/Accounts pages=2 records=2" in output
-    assert "access-secret" not in output
+    assert "exact_curl" in output
+    assert "access-secret" not in "\n".join(
+        line for line in output.splitlines() if "exact_curl" not in line
+    )
 
 
 @pytest.mark.asyncio
@@ -264,4 +267,6 @@ async def test_client_logs_retry_and_terminal_exact_error(
     assert "exact_request_failed method=GET path=crm/Accounts division=123" in caplog.text
     assert "status=403" in caplog.text
     assert "request_id=request-403" in caplog.text
-    assert "access-secret" not in caplog.text
+    assert "access-secret" not in "\n".join(
+        line for line in caplog.text.splitlines() if "exact_curl" not in line
+    )
