@@ -63,6 +63,31 @@ async def test_division_scoped_request_injects_bearer() -> None:
 
 
 @pytest.mark.asyncio
+async def test_client_debug_logs_full_curl_command(caplog: pytest.LogCaptureFixture) -> None:
+    client = ExactClient(
+        "https://start.exactonline.nl/api/v1",
+        Auth(),
+        http=httpx.AsyncClient(
+            transport=responses(httpx.Response(200, json={"d": {"results": []}}))
+        ),
+    )
+    client.set_division(123)
+    caplog.set_level(logging.DEBUG, logger="exact_mcp.client")
+
+    await client.request(
+        "POST",
+        "crm/Accounts",
+        params={"$filter": "Name eq 'Ada'"},
+        json={"Name": "Ada Lovelace"},
+    )
+
+    assert "exact_curl curl -X POST" in caplog.text
+    assert "Authorization: Bearer access-secret" in caplog.text
+    assert "%24filter=Name+eq+%27Ada%27" in caplog.text
+    assert '{"Name":"Ada Lovelace"}' in caplog.text
+
+
+@pytest.mark.asyncio
 async def test_registered_request_renders_normal_and_beta_templates() -> None:
     seen: list[httpx.Request] = []
 

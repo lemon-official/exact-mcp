@@ -10,7 +10,7 @@ import httpx
 
 from exact_mcp.endpoints import EndpointSpec
 from exact_mcp.errors import ExactAPIError, ValidationFailedError
-from exact_mcp.logging import redact
+from exact_mcp.logging import curl_command, redact
 from exact_mcp.rate_limit import RateLimiter
 
 logger = logging.getLogger(__name__)
@@ -160,6 +160,15 @@ class ExactClient:
                 safe_path,
                 redact(params, sensitive_values=(token,)),
                 redact(json, sensitive_values=(token,)),
+            )
+            logger.debug(
+                "exact_curl %s",
+                curl_command(
+                    method,
+                    str(httpx.URL(url, params=params)),
+                    headers,
+                    json_body=json,
+                ),
             )
             try:
                 response = await self._http.request(
