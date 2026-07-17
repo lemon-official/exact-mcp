@@ -1,11 +1,12 @@
 import logging
+import shlex
 from pathlib import Path
 
 import pytest
 from cryptography.fernet import Fernet
 
 from exact_mcp.config import Settings
-from exact_mcp.logging import configure_logging, redact
+from exact_mcp.logging import configure_logging, curl_command, redact
 
 
 def logging_settings(**overrides: object) -> Settings:
@@ -43,6 +44,22 @@ def test_redact_masks_nested_credentials_and_bearer_tokens() -> None:
     assert "csrf-state" not in rendered
     assert sanitized["nested"][0]["safe"] == "visible"
     assert rendered.count("<redacted>") >= 5
+
+
+def test_curl_command_preserves_full_request_values() -> None:
+    command = curl_command(
+        "POST",
+        "https://exact.example/Accounts?$filter=Name eq 'Ada'",
+        {"Authorization": "Bearer access-token", "Accept": "application/json"},
+        json_body={"Name": "Ada Lovelace"},
+    )
+
+    assert command.startswith("curl -X POST")
+    arguments = shlex.split(command)
+    assert "Authorization: Bearer access-token" in arguments
+    assert "https://exact.example/Accounts?$filter=Name eq 'Ada'" in arguments
+    assert "--data-raw" in arguments
+    assert '{"Name":"Ada Lovelace"}' in arguments
 
 
 def test_configure_logging_writes_stderr_and_optional_file(
