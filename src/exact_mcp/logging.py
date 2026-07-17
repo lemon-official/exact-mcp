@@ -1,12 +1,15 @@
 """Runtime logging configuration and credential-safe value rendering."""
 
+import json
 import logging
 import re
+import shlex
 import sys
 from collections.abc import Collection, Mapping
 from logging.handlers import RotatingFileHandler
 from pathlib import Path
 from typing import Any
+from urllib.parse import urlencode
 
 from pydantic import BaseModel, SecretStr
 
@@ -28,6 +31,36 @@ _BEARER_PATTERN = re.compile(r"(?i)\bbearer\s+[^\s,;]+")
 _KEY_VALUE_PATTERN = re.compile(
     r"(?i)([?&;\s](?:code|state|client_secret|access_token|refresh_token)=)[^&;\s]+"
 )
+
+
+def curl_command(
+    method: str,
+    url: str,
+    headers: Mapping[str, str],
+    *,
+    json_body: Mapping[str, Any] | None = None,
+    form_body: Mapping[str, str] | None = None,
+) -> str:
+    """Render a full shell-safe cURL command for an outbound request."""
+    if json_body is not None and form_body is not None:
+        raise ValueError("a cURL request cannot have both JSON and form bodies")
+
+    rendered_headers = dict(headers)
+    if json_body is not None:
+        rendered_headers.setdefault("Content-Type", "application/json")
+    if form_body is not None:
+        rendered_headers.setdefault("Content-Type", "application/x-www-form-urlencoded")
+
+    arguments = ["curl", "-X", method.upper(), url]
+    for name, value in rendered_headers.items():
+        arguments.extend(["-H", f"{name}: {value}"])
+    if json_body is not None:
+        arguments.extend(
+            ["--data-raw", json.dumps(json_body, separators=(",", ":"), ensure_ascii=False)]
+        )
+    if form_body is not None:
+        arguments.extend(["--data-raw", urlencode(form_body)])
+    return " ".join(shlex.quote(argument) for argument in arguments)
 
 
 def redact(value: Any, *, sensitive_values: Collection[str] = ()) -> Any:

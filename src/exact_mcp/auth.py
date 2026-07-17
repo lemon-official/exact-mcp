@@ -2,6 +2,7 @@
 
 import asyncio
 import html
+import logging
 import secrets
 import time
 from collections.abc import Callable
@@ -12,7 +13,10 @@ from urllib.parse import parse_qs, urlencode, urlsplit
 import httpx
 
 from exact_mcp.errors import AuthenticationRequiredError
+from exact_mcp.logging import curl_command
 from exact_mcp.tokens import OAuthTokens, TokenStore
+
+logger = logging.getLogger(__name__)
 
 
 @dataclass(frozen=True)
@@ -174,6 +178,15 @@ class OAuthManager:
             **grant,
         }
         try:
+            logger.debug(
+                "exact_curl %s",
+                curl_command(
+                    "POST",
+                    self._token_url,
+                    {"Accept": "application/json"},
+                    form_body=data,
+                ),
+            )
             response = await self._http.post(self._token_url, data=data)
         except httpx.HTTPError as exc:
             raise AuthenticationRequiredError(

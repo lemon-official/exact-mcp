@@ -1,4 +1,5 @@
 import asyncio
+import logging
 from urllib.parse import parse_qs, urlparse
 
 import httpx
@@ -85,6 +86,27 @@ async def test_exchange_code_persists_tokens() -> None:
     assert tokens.refresh_token_obtained_at == 1000
     assert tokens.expires_at == 1600
     assert await store.load() == tokens
+
+
+@pytest.mark.asyncio
+async def test_oauth_debug_logs_full_curl_command(caplog: pytest.LogCaptureFixture) -> None:
+    oauth = manager(
+        httpx.MockTransport(
+            lambda request: httpx.Response(
+                200,
+                json={"access_token": "new-access", "refresh_token": "new-refresh"},
+            )
+        ),
+        MemoryTokenStore(),
+    )
+    caplog.set_level(logging.DEBUG, logger="exact_mcp.auth")
+
+    await oauth.exchange_code("authorization-code")
+
+    assert "exact_curl curl -X POST" in caplog.text
+    assert "client_secret=client-secret" in caplog.text
+    assert "code=authorization-code" in caplog.text
+    assert "grant_type=authorization_code" in caplog.text
 
 
 @pytest.mark.asyncio
